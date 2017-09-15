@@ -26,7 +26,7 @@
 
     Private Sub TBContraseña_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBContraseña.KeyPress
 
-        TBContraseña.UseSystemPasswordChar = True
+
 
         If Char.IsLetterOrDigit(e.KeyChar) Then
             e.Handled = False

@@ -133,7 +133,7 @@
     Public Sub Eliminar(ByVal dni As Integer)
         Try
             Using db As New dbBoschEntities
-                Dim borrar As C_Cliente = (From q In db.Cliente
+                Dim borrar = (From q In db.Cliente
                             Select q Where q.dni_cliente = dni).First()
 
                 db.Cliente.DeleteObject(borrar)
@@ -148,7 +148,7 @@
     Public Function TraerDatos(ByVal dni As Integer)
         Try
             Using db As New dbBoschEntities
-                Dim datos As C_Cliente = (From q In db.Cliente
+                Dim datos = (From q In db.Cliente
                                         Select q Where dni = q.dni_cliente).First()
 
                 setDni(datos.dni_cliente)
@@ -169,7 +169,7 @@
     Public Function Verificar(ByVal dni As Integer)
         Try
             Using db As New dbBoschEntities
-                Dim verif As C_Cliente = (From q In db.Cliente
+                Dim verif = (From q In db.Cliente
                                  Select q Where q.dni_cliente = dni).First()
             End Using
             Return True

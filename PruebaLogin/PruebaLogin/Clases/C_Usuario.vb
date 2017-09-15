@@ -99,7 +99,7 @@
     Public Function TraerDatos(ByVal user As String)
         Try
             Using db As New dbBoschEntities
-                Dim datos As C_Usuario = (From q In db.Usuario
+                Dim datos = (From q In db.Usuario
                                         Select q Where user = q.id).First()
 
                 setUsuario(datos.id)
@@ -120,7 +120,7 @@
     Public Function Verificar(ByVal user As String, ByVal pass As String)
         Try
             Using db As New dbBoschEntities
-                Dim verif As C_Usuario = (From q In db.Usuario
+                Dim verif = (From q In db.Usuario
                                  Select q Where q.id = user And q.pass = pass).First()
             End Using
             Return True

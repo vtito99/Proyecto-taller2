@@ -76,6 +76,7 @@ Partial Class Login
         Me.TBContraseña.Name = "TBContraseña"
         Me.TBContraseña.Size = New System.Drawing.Size(202, 26)
         Me.TBContraseña.TabIndex = 3
+        Me.TBContraseña.UseSystemPasswordChar = True
         '
         'TBUsuario
         '
