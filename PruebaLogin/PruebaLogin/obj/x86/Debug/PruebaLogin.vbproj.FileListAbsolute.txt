@@ -26,3 +26,7 @@ C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\P
 C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.Resources.resources
 C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\proyecto-talller\Proyecto-taller2\PruebaLogin\PruebaLogin\bin\Debug\PruebaLogin.exe.config
+C:\proyecto-talller\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.exe
+C:\proyecto-talller\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.xml
+C:\proyecto-talller\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.pdb

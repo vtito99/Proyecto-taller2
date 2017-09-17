@@ -461,7 +461,7 @@ Partial Class Form1
         Me.BPanelProduc.Name = "BPanelProduc"
         Me.BPanelProduc.Size = New System.Drawing.Size(114, 33)
         Me.BPanelProduc.TabIndex = 9
-        Me.BPanelProduc.Text = "Ver Emmas"
+        Me.BPanelProduc.Text = "Ver"
         Me.BPanelProduc.UseVisualStyleBackColor = True
         '
         'PanelEliminar
