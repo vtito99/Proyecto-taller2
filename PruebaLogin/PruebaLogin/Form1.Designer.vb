@@ -472,11 +472,7 @@ Partial Class Form1
         Me.BPanelProduc.Name = "BPanelProduc"
         Me.BPanelProduc.Size = New System.Drawing.Size(95, 33)
         Me.BPanelProduc.TabIndex = 9
-<<<<<<< HEAD
         Me.BPanelProduc.Text = "Ver Productos"
-=======
-        Me.BPanelProduc.Text = "Ver"
->>>>>>> ea30fdc16924f55f63600ef027adba0068b3343b
         Me.BPanelProduc.UseVisualStyleBackColor = True
         '
         'BRegistrarC
