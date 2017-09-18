@@ -8,6 +8,7 @@
             Timer1.Enabled = False
             Me.Hide()
             Login.Show()
+            Me.Close()
         End If
     End Sub
 End Class

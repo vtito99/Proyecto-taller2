@@ -99,7 +99,7 @@
 
     'Metodo Mostrar Clientes
     Public Sub mostrar(ByVal grid As DataGridView)
-        Using base As New dbBoschEntities
+        Using base As New dbPruebaBoschEntities
             Dim mostrar = (From q In base.Cliente Select q).ToList
             grid.DataSource = mostrar
         End Using
@@ -108,8 +108,8 @@
     'Metodo Agregar Cliente
     Public Function AgregarCliente() As Boolean
         Try
-            Using db As New dbBoschEntities
-                Dim cliente As New C_Cliente
+            Using db As New dbPruebaBoschEntities
+                Dim cliente As New Cliente
 
                 With cliente
                     .dni_cliente = Me.getDni
@@ -132,7 +132,7 @@
 
     Public Sub Eliminar(ByVal dni As Integer)
         Try
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 Dim borrar = (From q In db.Cliente
                             Select q Where q.dni_cliente = dni).First()
 
@@ -147,7 +147,7 @@
 
     Public Function TraerDatos(ByVal dni As Integer)
         Try
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 Dim datos = (From q In db.Cliente
                                         Select q Where dni = q.dni_cliente).First()
 
@@ -168,7 +168,7 @@
 
     Public Function Verificar(ByVal dni As Integer)
         Try
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 Dim verif = (From q In db.Cliente
                                  Select q Where q.dni_cliente = dni).First()
             End Using

@@ -98,7 +98,7 @@
 
     Public Function TraerDatos(ByVal user As String)
         Try
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 Dim datos = (From q In db.Usuario
                                         Select q Where user = q.id).First()
 
@@ -119,7 +119,7 @@
 
     Public Function Verificar(ByVal user As String, ByVal pass As String)
         Try
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 Dim verif = (From q In db.Usuario
                                  Select q Where q.id = user And q.pass = pass).First()
             End Using

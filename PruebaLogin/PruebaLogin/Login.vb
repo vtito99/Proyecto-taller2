@@ -26,7 +26,7 @@
 
     Private Sub TBContraseña_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBContraseña.KeyPress
 
-
+        'TBContraseña.UseSystemPasswordChar = True
 
         If Char.IsLetterOrDigit(e.KeyChar) Then
             e.Handled = False
@@ -43,7 +43,7 @@
         Dim usuario As New C_Usuario(TBUsuario.Text, TBContraseña.Text)
         If usuario.Verificar(usuario.getUsuario, usuario.getContraseña) Then
             'Try
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 usuario.TraerDatos(usuario.getUsuario)
 
                 If (usuario.getTipoUsuario = "Vendedor") Then

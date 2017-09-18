@@ -1,5 +1,5 @@
 ﻿Public Class Form1
-    Dim db As New dbBoschEntities
+    Dim db As New dbPruebaBoschEntities
     Dim cliente As New C_Cliente
 
 #Region "Acceso a Paneles de Usuarios"
@@ -13,7 +13,7 @@
 
         If usuario.Verificar(usuario.getUsuario, usuario.getContraseña) Then
 
-            Using db As New dbBoschEntities
+            Using db As New dbPruebaBoschEntities
                 usuario.TraerDatos(usuario.getUsuario)
 
                 If usuario.getTipoUsuario = "Vendedor" Then
@@ -24,7 +24,6 @@
                     PanelProduc.Visible = True
                     PanelAgregar.Visible = False
                     PanelMostrar.Visible = False
-                    PanelEliminar.Visible = False
 
 
                     PanelAdmin.Visible = False
@@ -68,10 +67,10 @@
 #Region "Panel Vendedor"
 
 #Region "Lista de Clientes"
+
     Private Sub BListaC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BListaC.Click
         PanelMostrar.Visible = True
         PanelAgregar.Visible = False
-        PanelEliminar.Visible = False
         PanelProduc.Visible = False
     End Sub
 
@@ -154,14 +153,20 @@
     Private Sub BRegistrarC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BRegistrarC.Click
         PanelAgregar.Visible = True
         PanelMostrar.Visible = False
-        PanelEliminar.Visible = False
         PanelProduc.Visible = False
     End Sub
 #End Region
 
 #Region "Productos"
-    Private Sub TBEliDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBEliDni.KeyPress
-        TBEliDni.MaxLength = 8
+
+    Private Sub BPanelProduc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BPanelProduc.Click
+        PanelProduc.Visible = True
+        PanelMostrar.Visible = False
+        PanelAgregar.Visible = False
+    End Sub
+
+    Private Sub TBPDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBPDni.KeyPress
+        TBPDni.MaxLength = 8
 
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -174,76 +179,98 @@
         End If
     End Sub
 
-    Private Sub BEliVerificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BEliVerificar.Click
-        If Len(Trim(TBEliDni.Text)) = 0 Then
-            MsgBox("Ingrese Dni del Cliente para su verificación", 0 + 0 + 16, "Error")
+    Private Sub BPVerificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BPVerificar.Click
+        Dim repuesta As MsgBoxResult
 
+        If Len(Trim(TBPDni.Text)) = 0 Then
+            MsgBox("Ingrese Dni del Cliente para su verificación", 0 + 0 + 16, "Error")
         Else
 
-            Dim cliente As New C_Cliente(TBEliDni.Text)
+            Dim cliente As New C_Cliente(TBPDni.Text)
             If cliente.Verificar(cliente.getDni) Then
-                Try
-                    Using db As New dbBoschEntities
-                        cliente.TraerDatos(cliente.getDni)
 
-                        GroupBox2.Enabled = True
-
-                        TBEliNombre.Text = cliente.getNombre
-                        TBEliApellido.Text = cliente.getApellido
-                        TBEliDirec.Text = cliente.getDireccion
-                        TBEliTelefono.Text = cliente.getTelefono
-                        DTPEliFecha.Text = cliente.getNacimiento
-                        TBEliCorreo.Text = cliente.getCorreo
-                    End Using
-                Catch ex As Exception
-                    MsgBox("Error al cargar los datos", 0 + 0 + 16, "Error")
-                End Try
+                MsgBox("El Cliente ya se encuentra registrado", 0 + 0 + 16, "Error")
+                TBPDni.Clear()
 
             Else
-                MsgBox("El Cliente no se encuentra registrado", 0 + 0 + 16, "Error")
-                TBEliDni.Clear()
+                repuesta = MsgBox("El Cliente no se encuentra registrado. ¿Desea registrarlo?", 4 + 256 + 48, "Información")
+                If repuesta = 6 Then
+                    PanelProduc.Visible = False
+                    PanelAgregar.Visible = True
+                End If
             End If
         End If
     End Sub
 
-    Private Sub BEliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BEliminar.Click
-        Dim repuesta As MsgBoxResult
+    Private Sub BVerTodoProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BVerTodoProd.Click
 
-        repuesta = MsgBox("¿Desea eliminar al Cliente?", 4 + 256 + 48, "Eliminar Cliente")
+        Dim producto As New C_Producto
+        producto.TraerDatos()
 
-        If repuesta = 6 Then
-            Dim cliente As New C_Cliente(TBEliDni.Text)
+        Dim img As Image
 
-            cliente.Eliminar(cliente.getDni)
+        
+        producto.mostrarProductos(DGVProd)
+        For Each fila As DataGridViewRow In DGVProd.Rows
+            DGVProd.ColumnHeadersVisible = True
+            DGVProd.Columns("Ruta").Visible = False
 
-            MsgBox("El Cliente ha sido eliminado con éxito", 0 + 0 + 64, "Eliminar Cliente")
+            If producto.VerificarP(fila.Cells("Ruta").Value) Then
 
-            GroupBox2.Enabled = False
+                img = Image.FromFile(fila.Cells("Ruta").Value)
+                fila.Cells("Imagen").Value = img
 
-            TBEliDni.Clear()
-            TBEliNombre.Clear()
-            TBEliApellido.Clear()
-            TBEliDirec.Clear()
-            TBEliTelefono.Clear()
-            DTPEliFecha.Text = System.DateTime.Today
-            TBEliCorreo.Clear()
+            End If
+
+        Next
+
+    End Sub
+
+    Private Sub DataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVProd.CellContentClick
+        'Dim respuesta As MsgBoxResult
+        Dim cell As DataGridViewButtonCell = TryCast(DGVProd.CurrentCell, DataGridViewButtonCell)
+
+        If cell IsNot Nothing Then
+            Dim bc As DataGridViewButtonColumn = TryCast(DGVProd.Columns(e.ColumnIndex), DataGridViewButtonColumn)
+            If bc IsNot Nothing Then
+                Dim s As String = Convert.ToString(cell.Value)
+                Select Case bc.Name
+                    Case "Agregar"
+                        'DataGrid.Rows.RemoveAt(e.RowIndex)
+                        'respuesta = MsgBox("¿Desea Eliminar este registro?", 4 + 256 + 48, "Confirmar Eliminación")
+                        'Valor de retorno 6 = vbYes
+                        'If respuesta = 6 Then
+
+                        'Dim i As Integer
+                        'i = DataGrid.CurrentRow.Index
+                        'DataGrid.Rows.RemoveAt(i)
+                        Dim Producto, Modelo, Categoria, Stock, Precio As String
+                        Dim imag As Image
+
+                        imag = DGVProd(1, DGVProd.CurrentRow.Index).Value
+                        Producto = DGVProd(2, DGVProd.CurrentRow.Index).Value
+                        Modelo = DGVProd(3, DGVProd.CurrentRow.Index).Value
+                        Categoria = DGVProd(4, DGVProd.CurrentRow.Index).Value
+                        Stock = DGVProd(5, DGVProd.CurrentRow.Index).Value
+                        Precio = DGVProd(6, DGVProd.CurrentRow.Index).Value
+
+
+
+                        DGVProdAgre.Rows.Add("", imag, Producto, Modelo, Categoria, Stock, Precio)
+                        'MsgBox("El registro se eliminó correctamente", 0 + 0 + 64, "Eliminar")
+
+                        'End If
+                        Exit Select
+                End Select
+
+            End If
         End If
-    End Sub
 
-    Private Sub BEliVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BEliVolver.Click
-        PanelEliminar.Visible = False
-    End Sub
 
-    Private Sub BPanelProduc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BPanelProduc.Click
-        PanelProduc.Visible = True
-        PanelEliminar.Visible = False
-        PanelMostrar.Visible = False
-        PanelAgregar.Visible = False
-    End Sub
 
+
+    End Sub
 
 #End Region
 #End Region
-
-   
 End Class

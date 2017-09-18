@@ -6,108 +6,108 @@ PruebaLogin
 </name>
 </assembly>
 <members>
-<member name="M:PruebaLogin.dbBoschEntities.#ctor">
+<member name="M:PruebaLogin.dbPruebaBoschEntities.#ctor">
 	<summary>
- Initializes a new dbBoschEntities object using the connection string found in the 'dbBoschEntities' section of the application configuration file.
+ Initializes a new dbPruebaBoschEntities object using the connection string found in the 'dbPruebaBoschEntities' section of the application configuration file.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.#ctor(System.String)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.#ctor(System.String)">
 	<summary>
- Initialize a new dbBoschEntities object.
+ Initialize a new dbPruebaBoschEntities object.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.#ctor(System.Data.EntityClient.EntityConnection)">
 	<summary>
- Initialize a new dbBoschEntities object.
+ Initialize a new dbPruebaBoschEntities object.
  </summary>
-</member><member name="P:PruebaLogin.dbBoschEntities.Cliente">
-	<summary>
- No Metadata Documentation available.
- </summary>
-</member><member name="P:PruebaLogin.dbBoschEntities.Detalle">
+</member><member name="P:PruebaLogin.dbPruebaBoschEntities.Cliente">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.dbBoschEntities.Factura">
+</member><member name="P:PruebaLogin.dbPruebaBoschEntities.Detalle">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.dbBoschEntities.Producto">
+</member><member name="P:PruebaLogin.dbPruebaBoschEntities.Factura">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.dbBoschEntities.TipoProducto">
+</member><member name="P:PruebaLogin.dbPruebaBoschEntities.Producto">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.dbBoschEntities.Usuario">
+</member><member name="P:PruebaLogin.dbPruebaBoschEntities.TipoProducto">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.AddToCliente(PruebaLogin.C_Cliente)">
+</member><member name="P:PruebaLogin.dbPruebaBoschEntities.Usuario">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.AddToCliente(PruebaLogin.Cliente)">
 	<summary>
  Deprecated Method for adding a new object to the Cliente EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.AddToDetalle(PruebaLogin.Detalle)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.AddToDetalle(PruebaLogin.Detalle)">
 	<summary>
  Deprecated Method for adding a new object to the Detalle EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.AddToFactura(PruebaLogin.Factura)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.AddToFactura(PruebaLogin.Factura)">
 	<summary>
  Deprecated Method for adding a new object to the Factura EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.AddToProducto(PruebaLogin.Producto)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.AddToProducto(PruebaLogin.Producto)">
 	<summary>
  Deprecated Method for adding a new object to the Producto EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.AddToTipoProducto(PruebaLogin.TipoProducto)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.AddToTipoProducto(PruebaLogin.TipoProducto)">
 	<summary>
  Deprecated Method for adding a new object to the TipoProducto EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="M:PruebaLogin.dbBoschEntities.AddToUsuario(PruebaLogin.C_Usuario)">
+</member><member name="M:PruebaLogin.dbPruebaBoschEntities.AddToUsuario(PruebaLogin.Usuario)">
 	<summary>
  Deprecated Method for adding a new object to the Usuario EntitySet. Consider using the .Add method of the associated ObjectSet(Of T) property instead.
  </summary>
-</member><member name="T:PruebaLogin.dbBoschEntities">
+</member><member name="T:PruebaLogin.dbPruebaBoschEntities">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:PruebaLogin.C_Cliente.CreateCliente(System.Int32)">
+</member><member name="M:PruebaLogin.Cliente.CreateCliente(System.Int32)">
 	<summary>
  Create a new Cliente object.
  </summary>
 	<param name="dni_cliente">Initial value of the dni_cliente property.</param>
-</member><member name="P:PruebaLogin.C_Cliente.dni_cliente">
+</member><member name="P:PruebaLogin.Cliente.dni_cliente">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.nombre">
+</member><member name="P:PruebaLogin.Cliente.nombre">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.apellido">
+</member><member name="P:PruebaLogin.Cliente.apellido">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.direccion">
+</member><member name="P:PruebaLogin.Cliente.direccion">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.telefono">
+</member><member name="P:PruebaLogin.Cliente.telefono">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.fechaNacimiento">
+</member><member name="P:PruebaLogin.Cliente.fechaNacimiento">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.mail">
+</member><member name="P:PruebaLogin.Cliente.mail">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Cliente.Factura">
+</member><member name="P:PruebaLogin.Cliente.Factura">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="T:PruebaLogin.C_Cliente">
+</member><member name="T:PruebaLogin.Cliente">
 	<summary>
  No Metadata Documentation available.
  </summary>
@@ -224,6 +224,10 @@ PruebaLogin
 	<summary>
  No Metadata Documentation available.
  </summary>
+</member><member name="P:PruebaLogin.Producto.ruta_img">
+	<summary>
+ No Metadata Documentation available.
+ </summary>
 </member><member name="P:PruebaLogin.Producto.Detalle">
 	<summary>
  No Metadata Documentation available.
@@ -261,44 +265,44 @@ PruebaLogin
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="M:PruebaLogin.C_Usuario.CreateUsuario(System.Int32)">
+</member><member name="M:PruebaLogin.Usuario.CreateUsuario(System.Int32)">
 	<summary>
  Create a new Usuario object.
  </summary>
 	<param name="id_usuario">Initial value of the id_usuario property.</param>
-</member><member name="P:PruebaLogin.C_Usuario.id_usuario">
+</member><member name="P:PruebaLogin.Usuario.id_usuario">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.id">
+</member><member name="P:PruebaLogin.Usuario.id">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.pass">
+</member><member name="P:PruebaLogin.Usuario.pass">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.nombre">
+</member><member name="P:PruebaLogin.Usuario.nombre">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.apellido">
+</member><member name="P:PruebaLogin.Usuario.apellido">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.tipoUsuario">
+</member><member name="P:PruebaLogin.Usuario.tipoUsuario">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.fechaNacimiento">
+</member><member name="P:PruebaLogin.Usuario.fechaNacimiento">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="P:PruebaLogin.C_Usuario.mail">
+</member><member name="P:PruebaLogin.Usuario.mail">
 	<summary>
  No Metadata Documentation available.
  </summary>
-</member><member name="T:PruebaLogin.C_Usuario">
+</member><member name="T:PruebaLogin.Usuario">
 	<summary>
  No Metadata Documentation available.
  </summary>
