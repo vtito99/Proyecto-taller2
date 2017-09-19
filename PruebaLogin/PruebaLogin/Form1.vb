@@ -278,7 +278,7 @@
 
 #Region "Administrador"
 
-    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles AdminDGVUsuario.CellContentClick
 
 
 
@@ -286,19 +286,27 @@
 
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
 
         Dim usuario As New C_Usuario
 
-        usuario.mostrarUsuarios(DataGridView2)
-
-
+        usuario.mostrarUsuarios(AdminDGVUsuario)
 
     End Sub
+
+    Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        Dim cliente As New C_Cliente
+
+        cliente.mostrarClientes(AdminDGVUsuario)
+
+    End Sub
+
+
 #End Region
 
 
 
 
 
+    
 End Class
