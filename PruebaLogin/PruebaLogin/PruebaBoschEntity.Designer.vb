@@ -18,7 +18,7 @@ Imports System.Runtime.Serialization
 Imports System.Xml.Serialization
 
 
-<Assembly: EdmSchemaAttribute("0ee137ce-2b3d-4e91-91e4-d6ccddf6fbd6")>
+<Assembly: EdmSchemaAttribute("9868a27e-afe8-4fad-85b5-e4ef19259662")>
 #Region "EDM Relationship Metadata"
 <Assembly: EdmRelationshipAttribute("dbPruebaBoschModel", "FK_dni_cliente", "Cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(Cliente), "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Factura), True)>
 <Assembly: EdmRelationshipAttribute("dbPruebaBoschModel", "FK_id_factura", "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Factura), "Detalle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Detalle), True)>
