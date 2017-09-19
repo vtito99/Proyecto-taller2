@@ -612,7 +612,7 @@ Partial Class Form1
         '
         'PanelAdmin
         '
-        Me.PanelAdmin.BackColor = System.Drawing.Color.Cyan
+        Me.PanelAdmin.BackColor = System.Drawing.Color.Maroon
         Me.PanelAdmin.Controls.Add(Me.ver)
         Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
         Me.PanelAdmin.Controls.Add(Me.AdminDGVUsuario)
@@ -626,7 +626,11 @@ Partial Class Form1
         '
         'ver
         '
+<<<<<<< HEAD
         Me.ver.Location = New System.Drawing.Point(565, 350)
+=======
+        Me.ver.Location = New System.Drawing.Point(394, 350)
+>>>>>>> 4aaa63fa0123e505753657174ccafe3a94435b2b
         Me.ver.Name = "ver"
         Me.ver.Size = New System.Drawing.Size(75, 23)
         Me.ver.TabIndex = 4
