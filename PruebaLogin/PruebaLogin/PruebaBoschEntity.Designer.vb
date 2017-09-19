@@ -9,14 +9,16 @@
 '------------------------------------------------------------------------------
 
 Imports System
+Imports System.ComponentModel
+Imports System.Data.EntityClient
 Imports System.Data.Objects
 Imports System.Data.Objects.DataClasses
-Imports System.Data.EntityClient
-Imports System.ComponentModel
-Imports System.Xml.Serialization
+Imports System.Linq
 Imports System.Runtime.Serialization
+Imports System.Xml.Serialization
 
-<Assembly: EdmSchemaAttribute("1d601693-999f-4c16-85da-29545b75c46f")>
+
+<Assembly: EdmSchemaAttribute("0ee137ce-2b3d-4e91-91e4-d6ccddf6fbd6")>
 #Region "EDM Relationship Metadata"
 <Assembly: EdmRelationshipAttribute("dbPruebaBoschModel", "FK_dni_cliente", "Cliente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(Cliente), "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Factura), True)>
 <Assembly: EdmRelationshipAttribute("dbPruebaBoschModel", "FK_id_factura", "Factura", System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Factura), "Detalle", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Detalle), True)>
@@ -40,7 +42,7 @@ Public Partial Class dbPruebaBoschEntities
     ''' </summary>
     Public Sub New()
         MyBase.New("name=dbPruebaBoschEntities", "dbPruebaBoschEntities")
-    MyBase.ContextOptions.LazyLoadingEnabled = true
+        MyBase.ContextOptions.LazyLoadingEnabled = true
         OnContextCreated()
     End Sub
 
@@ -49,7 +51,7 @@ Public Partial Class dbPruebaBoschEntities
     ''' </summary>
     Public Sub New(ByVal connectionString As String)
         MyBase.New(connectionString, "dbPruebaBoschEntities")
-    MyBase.ContextOptions.LazyLoadingEnabled = true
+        MyBase.ContextOptions.LazyLoadingEnabled = true
         OnContextCreated()
     End Sub
 
@@ -58,7 +60,7 @@ Public Partial Class dbPruebaBoschEntities
     ''' </summary>
     Public Sub New(ByVal connection As EntityConnection)
         MyBase.New(connection, "dbPruebaBoschEntities")
-    MyBase.ContextOptions.LazyLoadingEnabled = true
+        MyBase.ContextOptions.LazyLoadingEnabled = true
         OnContextCreated()
     End Sub
 
@@ -158,6 +160,7 @@ Public Partial Class dbPruebaBoschEntities
     Private _Usuario As ObjectSet(Of Usuario)
 
     #End Region
+
     #Region "AddTo Methods"
 
     ''' <summary>
@@ -203,9 +206,11 @@ Public Partial Class dbPruebaBoschEntities
     End Sub
 
     #End Region
+
 End Class
 
 #End Region
+
 #Region "Entities"
 
 ''' <summary>
@@ -229,6 +234,7 @@ Public Partial Class Cliente
     End Function
 
     #End Region
+
     #Region "Primitive Properties"
 
     ''' <summary>
@@ -409,6 +415,7 @@ Public Partial Class Cliente
     End Sub
 
     #End Region
+
     #Region "Navigation Properties"
 
     ''' <summary>
@@ -430,6 +437,7 @@ Public Partial Class Cliente
     End Property
 
     #End Region
+
 End Class
 
 ''' <summary>
@@ -455,6 +463,7 @@ Public Partial Class Detalle
     End Function
 
     #End Region
+
     #Region "Primitive Properties"
 
     ''' <summary>
@@ -587,6 +596,7 @@ Public Partial Class Detalle
     End Sub
 
     #End Region
+
     #Region "Navigation Properties"
 
     ''' <summary>
@@ -652,6 +662,7 @@ Public Partial Class Detalle
     End Property
 
     #End Region
+
 End Class
 
 ''' <summary>
@@ -675,6 +686,7 @@ Public Partial Class Factura
     End Function
 
     #End Region
+
     #Region "Primitive Properties"
 
     ''' <summary>
@@ -780,6 +792,7 @@ Public Partial Class Factura
     End Sub
 
     #End Region
+
     #Region "Navigation Properties"
 
     ''' <summary>
@@ -832,6 +845,7 @@ Public Partial Class Factura
     End Property
 
     #End Region
+
 End Class
 
 ''' <summary>
@@ -857,6 +871,7 @@ Public Partial Class Producto
     End Function
 
     #End Region
+
     #Region "Primitive Properties"
 
     ''' <summary>
@@ -1037,6 +1052,7 @@ Public Partial Class Producto
     End Sub
 
     #End Region
+
     #Region "Navigation Properties"
 
     ''' <summary>
@@ -1089,6 +1105,7 @@ Public Partial Class Producto
     End Property
 
     #End Region
+
 End Class
 
 ''' <summary>
@@ -1112,6 +1129,7 @@ Public Partial Class TipoProducto
     End Function
 
     #End Region
+
     #Region "Primitive Properties"
 
     ''' <summary>
@@ -1167,6 +1185,7 @@ Public Partial Class TipoProducto
     End Sub
 
     #End Region
+
     #Region "Navigation Properties"
 
     ''' <summary>
@@ -1188,6 +1207,7 @@ Public Partial Class TipoProducto
     End Property
 
     #End Region
+
 End Class
 
 ''' <summary>
@@ -1211,6 +1231,7 @@ Public Partial Class Usuario
     End Function
 
     #End Region
+
     #Region "Primitive Properties"
 
     ''' <summary>
@@ -1416,7 +1437,9 @@ Public Partial Class Usuario
     End Sub
 
     #End Region
+
 End Class
 
 #End Region
+
 

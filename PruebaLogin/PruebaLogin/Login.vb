@@ -71,4 +71,8 @@
             MsgBox("Usuario no registrado", 0 + 0 + 16, "Error")
         End If
     End Sub
+
+    Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

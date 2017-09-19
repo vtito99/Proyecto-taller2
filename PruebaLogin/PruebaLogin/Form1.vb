@@ -273,4 +273,8 @@
 
 #End Region
 #End Region
+
+    Private Sub PanelVendedor_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PanelVendedor.Paint
+
+    End Sub
 End Class

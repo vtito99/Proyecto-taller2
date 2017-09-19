@@ -26,6 +26,13 @@ Partial Class Form1
         Me.PanelProduc = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.DGVProdAgre = New System.Windows.Forms.DataGridView()
+        Me.Quitar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Img = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Productos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BVerTodoProd = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -75,13 +82,6 @@ Partial Class Form1
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
-        Me.Quitar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Img = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Productos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,13 +106,16 @@ Partial Class Form1
         Me.PanelVendedor.Controls.Add(Me.BListaC)
         Me.PanelVendedor.Controls.Add(Me.BCerrarVendedor)
         Me.PanelVendedor.Controls.Add(Me.LabelVendedor)
+        Me.PanelVendedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelVendedor.Location = New System.Drawing.Point(0, 0)
         Me.PanelVendedor.Name = "PanelVendedor"
-        Me.PanelVendedor.Size = New System.Drawing.Size(980, 800)
+        Me.PanelVendedor.Size = New System.Drawing.Size(974, 582)
         Me.PanelVendedor.TabIndex = 0
         '
         'PanelProduc
         '
+        Me.PanelProduc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PanelProduc.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.PanelProduc.Controls.Add(Me.Label17)
         Me.PanelProduc.Controls.Add(Me.DGVProdAgre)
@@ -141,12 +144,57 @@ Partial Class Form1
         'DGVProdAgre
         '
         Me.DGVProdAgre.AllowUserToAddRows = False
+        Me.DGVProdAgre.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DGVProdAgre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVProdAgre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVProdAgre.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Quitar, Me.Img, Me.Productos, Me.Modelo, Me.Categoria, Me.Stock, Me.Precio})
         Me.DGVProdAgre.Location = New System.Drawing.Point(16, 437)
         Me.DGVProdAgre.Name = "DGVProdAgre"
         Me.DGVProdAgre.Size = New System.Drawing.Size(666, 243)
         Me.DGVProdAgre.TabIndex = 28
+        '
+        'Quitar
+        '
+        Me.Quitar.DataPropertyName = "Quitar"
+        Me.Quitar.HeaderText = "Quitar"
+        Me.Quitar.Name = "Quitar"
+        Me.Quitar.Text = "Quitar"
+        Me.Quitar.ToolTipText = "Quitar"
+        Me.Quitar.UseColumnTextForButtonValue = True
+        '
+        'Img
+        '
+        Me.Img.HeaderText = "Img"
+        Me.Img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.Img.Name = "Img"
+        Me.Img.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'Productos
+        '
+        Me.Productos.HeaderText = "Productos"
+        Me.Productos.Name = "Productos"
+        '
+        'Modelo
+        '
+        Me.Modelo.HeaderText = "Modelo"
+        Me.Modelo.Name = "Modelo"
+        '
+        'Categoria
+        '
+        Me.Categoria.HeaderText = "Categoria"
+        Me.Categoria.Name = "Categoria"
+        '
+        'Stock
+        '
+        Me.Stock.HeaderText = "Stock"
+        Me.Stock.Name = "Stock"
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.Name = "Precio"
         '
         'BVerTodoProd
         '
@@ -167,6 +215,8 @@ Partial Class Form1
         '
         'GroupBox3
         '
+        Me.GroupBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.BPVerificar)
         Me.GroupBox3.Controls.Add(Me.TBPDni)
         Me.GroupBox3.Controls.Add(Me.Label15)
@@ -179,6 +229,7 @@ Partial Class Form1
         '
         'BPVerificar
         '
+        Me.BPVerificar.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.BPVerificar.Location = New System.Drawing.Point(286, 26)
         Me.BPVerificar.Name = "BPVerificar"
         Me.BPVerificar.Size = New System.Drawing.Size(93, 34)
@@ -188,6 +239,7 @@ Partial Class Form1
         '
         'TBPDni
         '
+        Me.TBPDni.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.TBPDni.Location = New System.Drawing.Point(98, 33)
         Me.TBPDni.Name = "TBPDni"
         Me.TBPDni.Size = New System.Drawing.Size(154, 20)
@@ -195,6 +247,7 @@ Partial Class Form1
         '
         'Label15
         '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(63, 36)
         Me.Label15.Name = "Label15"
@@ -241,6 +294,9 @@ Partial Class Form1
         'DGVProd
         '
         Me.DGVProd.AllowUserToAddRows = False
+        Me.DGVProd.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DGVProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVProd.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DGVProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGVProd.ColumnHeadersVisible = False
@@ -268,7 +324,6 @@ Partial Class Form1
         Me.Imagen.Name = "Imagen"
         Me.Imagen.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.Imagen.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Imagen.Width = 120
         '
         'PanelAgregar
         '
@@ -532,6 +587,7 @@ Partial Class Form1
         '
         'BCerrarVendedor
         '
+        Me.BCerrarVendedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BCerrarVendedor.Location = New System.Drawing.Point(878, 50)
         Me.BCerrarVendedor.Name = "BCerrarVendedor"
         Me.BCerrarVendedor.Size = New System.Drawing.Size(63, 35)
@@ -541,6 +597,7 @@ Partial Class Form1
         '
         'LabelVendedor
         '
+        Me.LabelVendedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelVendedor.AutoSize = True
         Me.LabelVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelVendedor.Location = New System.Drawing.Point(818, 17)
@@ -606,49 +663,6 @@ Partial Class Form1
         Me.LabelSupervisor.Size = New System.Drawing.Size(49, 16)
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
-        '
-        'Quitar
-        '
-        Me.Quitar.DataPropertyName = "Quitar"
-        Me.Quitar.HeaderText = "Quitar"
-        Me.Quitar.Name = "Quitar"
-        Me.Quitar.Text = "Quitar"
-        Me.Quitar.ToolTipText = "Quitar"
-        Me.Quitar.UseColumnTextForButtonValue = True
-        '
-        'Img
-        '
-        Me.Img.HeaderText = "Img"
-        Me.Img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.Img.Name = "Img"
-        Me.Img.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Img.Width = 120
-        '
-        'Productos
-        '
-        Me.Productos.HeaderText = "Productos"
-        Me.Productos.Name = "Productos"
-        '
-        'Modelo
-        '
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.Name = "Modelo"
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
         '
         'Form1
         '
