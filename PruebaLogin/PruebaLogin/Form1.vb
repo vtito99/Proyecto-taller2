@@ -274,5 +274,39 @@
 #End Region
 #End Region
 
-   
+
+
+#Region "Administrador"
+
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles AdminDGVUsuario.CellContentClick
+
+
+
+
+
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
+
+        Dim usuario As New C_Usuario
+
+        usuario.mostrarUsuarios(AdminDGVUsuario)
+
+    End Sub
+
+    Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        Dim cliente As New C_Cliente
+
+        cliente.mostrarClientes(AdminDGVUsuario)
+
+    End Sub
+
+
+#End Region
+
+
+
+
+
+    
 End Class

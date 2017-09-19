@@ -177,4 +177,19 @@
             Return False
         End Try
     End Function
+
+    Public Sub mostrarClientes(ByVal grid As DataGridView)
+
+        Using base As New dbPruebaBoschEntities
+
+            Dim mostrar = (From q In base.Cliente
+                           Select Dni = q.dni_cliente, Nombre = q.nombre, Apellido = q.apellido, Direccion = q.direccion, Telefono = q.telefono,
+                                  Fecha = q.fechaNacimiento, Mail = q.mail).ToList
+
+            grid.DataSource = mostrar
+        End Using
+    End Sub
+
+
+
 End Class
