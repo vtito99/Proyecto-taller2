@@ -612,7 +612,7 @@ Partial Class Form1
         '
         'PanelAdmin
         '
-        Me.PanelAdmin.BackColor = System.Drawing.Color.Maroon
+        Me.PanelAdmin.BackColor = System.Drawing.Color.Red
         Me.PanelAdmin.Controls.Add(Me.ver)
         Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
         Me.PanelAdmin.Controls.Add(Me.AdminDGVUsuario)
