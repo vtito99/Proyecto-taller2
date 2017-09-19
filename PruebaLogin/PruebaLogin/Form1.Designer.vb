@@ -77,11 +77,14 @@ Partial Class Form1
         Me.BCerrarVendedor = New System.Windows.Forms.Button()
         Me.LabelVendedor = New System.Windows.Forms.Label()
         Me.PanelAdmin = New System.Windows.Forms.Panel()
+        Me.VerUsuarios = New System.Windows.Forms.Button()
+        Me.AdminDGVUsuario = New System.Windows.Forms.DataGridView()
         Me.LabelAdmin = New System.Windows.Forms.Label()
         Me.BCerrarAdmin = New System.Windows.Forms.Button()
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
+        Me.ver = New System.Windows.Forms.Button()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,6 +95,7 @@ Partial Class Form1
         Me.PanelMostrar.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAdmin.SuspendLayout()
+        CType(Me.AdminDGVUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSupervisor.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -609,12 +613,33 @@ Partial Class Form1
         'PanelAdmin
         '
         Me.PanelAdmin.BackColor = System.Drawing.Color.Cyan
+        Me.PanelAdmin.Controls.Add(Me.ver)
+        Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
+        Me.PanelAdmin.Controls.Add(Me.AdminDGVUsuario)
         Me.PanelAdmin.Controls.Add(Me.LabelAdmin)
         Me.PanelAdmin.Controls.Add(Me.BCerrarAdmin)
+        Me.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelAdmin.Location = New System.Drawing.Point(0, 0)
         Me.PanelAdmin.Name = "PanelAdmin"
-        Me.PanelAdmin.Size = New System.Drawing.Size(914, 478)
+        Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
         Me.PanelAdmin.TabIndex = 0
+        '
+        'VerUsuarios
+        '
+        Me.VerUsuarios.Location = New System.Drawing.Point(292, 350)
+        Me.VerUsuarios.Name = "VerUsuarios"
+        Me.VerUsuarios.Size = New System.Drawing.Size(75, 23)
+        Me.VerUsuarios.TabIndex = 3
+        Me.VerUsuarios.Text = "Ver Usuarios"
+        Me.VerUsuarios.UseVisualStyleBackColor = True
+        '
+        'AdminDGVUsuario
+        '
+        Me.AdminDGVUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.AdminDGVUsuario.Location = New System.Drawing.Point(141, 183)
+        Me.AdminDGVUsuario.Name = "AdminDGVUsuario"
+        Me.AdminDGVUsuario.Size = New System.Drawing.Size(705, 150)
+        Me.AdminDGVUsuario.TabIndex = 2
         '
         'LabelAdmin
         '
@@ -628,7 +653,8 @@ Partial Class Form1
         '
         'BCerrarAdmin
         '
-        Me.BCerrarAdmin.Location = New System.Drawing.Point(762, 51)
+        Me.BCerrarAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BCerrarAdmin.Location = New System.Drawing.Point(807, 17)
         Me.BCerrarAdmin.Name = "BCerrarAdmin"
         Me.BCerrarAdmin.Size = New System.Drawing.Size(107, 33)
         Me.BCerrarAdmin.TabIndex = 0
@@ -664,14 +690,23 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
+        'ver
+        '
+        Me.ver.Location = New System.Drawing.Point(394, 350)
+        Me.ver.Name = "ver"
+        Me.ver.Size = New System.Drawing.Size(75, 23)
+        Me.ver.TabIndex = 4
+        Me.ver.Text = "Ver Clientes"
+        Me.ver.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(974, 582)
+        Me.Controls.Add(Me.PanelAdmin)
         Me.Controls.Add(Me.PanelVendedor)
         Me.Controls.Add(Me.PanelSupervisor)
-        Me.Controls.Add(Me.PanelAdmin)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
@@ -691,6 +726,7 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAdmin.ResumeLayout(False)
         Me.PanelAdmin.PerformLayout()
+        CType(Me.AdminDGVUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSupervisor.ResumeLayout(False)
         Me.PanelSupervisor.PerformLayout()
         Me.ResumeLayout(False)
@@ -756,4 +792,7 @@ Partial Class Form1
     Friend WithEvents Categoria As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AdminDGVUsuario As System.Windows.Forms.DataGridView
+    Friend WithEvents VerUsuarios As System.Windows.Forms.Button
+    Friend WithEvents ver As System.Windows.Forms.Button
 End Class
