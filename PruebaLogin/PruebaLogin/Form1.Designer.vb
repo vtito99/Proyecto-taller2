@@ -82,6 +82,8 @@ Partial Class Form1
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +95,7 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAdmin.SuspendLayout()
         Me.PanelSupervisor.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelVendedor
@@ -609,11 +612,14 @@ Partial Class Form1
         'PanelAdmin
         '
         Me.PanelAdmin.BackColor = System.Drawing.Color.Cyan
+        Me.PanelAdmin.Controls.Add(Me.Button1)
+        Me.PanelAdmin.Controls.Add(Me.DataGridView2)
         Me.PanelAdmin.Controls.Add(Me.LabelAdmin)
         Me.PanelAdmin.Controls.Add(Me.BCerrarAdmin)
+        Me.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelAdmin.Location = New System.Drawing.Point(0, 0)
         Me.PanelAdmin.Name = "PanelAdmin"
-        Me.PanelAdmin.Size = New System.Drawing.Size(914, 478)
+        Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
         Me.PanelAdmin.TabIndex = 0
         '
         'LabelAdmin
@@ -628,7 +634,8 @@ Partial Class Form1
         '
         'BCerrarAdmin
         '
-        Me.BCerrarAdmin.Location = New System.Drawing.Point(762, 51)
+        Me.BCerrarAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BCerrarAdmin.Location = New System.Drawing.Point(807, 17)
         Me.BCerrarAdmin.Name = "BCerrarAdmin"
         Me.BCerrarAdmin.Size = New System.Drawing.Size(107, 33)
         Me.BCerrarAdmin.TabIndex = 0
@@ -664,14 +671,31 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(141, 183)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(705, 150)
+        Me.DataGridView2.TabIndex = 2
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(292, 350)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 3
+        Me.Button1.Text = "Ver Usuarios"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(974, 582)
+        Me.Controls.Add(Me.PanelAdmin)
         Me.Controls.Add(Me.PanelVendedor)
         Me.Controls.Add(Me.PanelSupervisor)
-        Me.Controls.Add(Me.PanelAdmin)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
@@ -693,6 +717,7 @@ Partial Class Form1
         Me.PanelAdmin.PerformLayout()
         Me.PanelSupervisor.ResumeLayout(False)
         Me.PanelSupervisor.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -756,4 +781,6 @@ Partial Class Form1
     Friend WithEvents Categoria As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

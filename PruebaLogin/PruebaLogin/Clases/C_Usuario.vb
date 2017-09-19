@@ -20,6 +20,8 @@
 
     End Sub
 
+    
+
     Public Sub New(ByVal user As String, ByVal pass As String)
 
         setUsuario(user)
