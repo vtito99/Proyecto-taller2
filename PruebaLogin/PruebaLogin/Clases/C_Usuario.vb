@@ -128,4 +128,20 @@
             Return False
         End Try
     End Function
+
+    Public Sub mostrarUsuarios(ByVal grid As DataGridView)
+
+        Using base As New dbPruebaBoschEntities
+
+            Dim mostrar = (From q In base.Usuario
+                           Select id = q.id, Pass = q.pass, Nombre = q.nombre, Apellido = q.apellido, TipoUsuario = q.tipoUsuario,
+                                  Fecha = q.fechaNacimiento, Mail = q.mail).ToList
+
+            grid.DataSource = mostrar
+        End Using
+    End Sub
+
+
+
+
 End Class
