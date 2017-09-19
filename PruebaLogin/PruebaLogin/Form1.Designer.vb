@@ -77,6 +77,7 @@ Partial Class Form1
         Me.BCerrarVendedor = New System.Windows.Forms.Button()
         Me.LabelVendedor = New System.Windows.Forms.Label()
         Me.PanelAdmin = New System.Windows.Forms.Panel()
+        Me.ver = New System.Windows.Forms.Button()
         Me.VerUsuarios = New System.Windows.Forms.Button()
         Me.AdminDGVUsuario = New System.Windows.Forms.DataGridView()
         Me.LabelAdmin = New System.Windows.Forms.Label()
@@ -84,7 +85,6 @@ Partial Class Form1
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
-        Me.ver = New System.Windows.Forms.Button()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -612,7 +612,7 @@ Partial Class Form1
         '
         'PanelAdmin
         '
-        Me.PanelAdmin.BackColor = System.Drawing.Color.Cyan
+        Me.PanelAdmin.BackColor = System.Drawing.Color.Maroon
         Me.PanelAdmin.Controls.Add(Me.ver)
         Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
         Me.PanelAdmin.Controls.Add(Me.AdminDGVUsuario)
@@ -623,6 +623,15 @@ Partial Class Form1
         Me.PanelAdmin.Name = "PanelAdmin"
         Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
         Me.PanelAdmin.TabIndex = 0
+        '
+        'ver
+        '
+        Me.ver.Location = New System.Drawing.Point(394, 350)
+        Me.ver.Name = "ver"
+        Me.ver.Size = New System.Drawing.Size(75, 23)
+        Me.ver.TabIndex = 4
+        Me.ver.Text = "Ver Clientes"
+        Me.ver.UseVisualStyleBackColor = True
         '
         'VerUsuarios
         '
@@ -689,15 +698,6 @@ Partial Class Form1
         Me.LabelSupervisor.Size = New System.Drawing.Size(49, 16)
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
-        '
-        'ver
-        '
-        Me.ver.Location = New System.Drawing.Point(394, 350)
-        Me.ver.Name = "ver"
-        Me.ver.Size = New System.Drawing.Size(75, 23)
-        Me.ver.TabIndex = 4
-        Me.ver.Text = "Ver Clientes"
-        Me.ver.UseVisualStyleBackColor = True
         '
         'Form1
         '
