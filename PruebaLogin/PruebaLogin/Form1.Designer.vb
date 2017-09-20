@@ -85,6 +85,9 @@ Partial Class Form1
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Imag = New System.Windows.Forms.DataGridViewImageColumn()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -612,7 +615,9 @@ Partial Class Form1
         '
         'PanelAdmin
         '
-        Me.PanelAdmin.BackColor = System.Drawing.Color.Maroon
+        Me.PanelAdmin.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelAdmin.Controls.Add(Me.Button2)
+        Me.PanelAdmin.Controls.Add(Me.Button1)
         Me.PanelAdmin.Controls.Add(Me.ver)
         Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
         Me.PanelAdmin.Controls.Add(Me.AdminDGVUsuario)
@@ -635,26 +640,32 @@ Partial Class Form1
         '
         'VerUsuarios
         '
-        Me.VerUsuarios.Location = New System.Drawing.Point(292, 350)
+        Me.VerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.VerUsuarios.Location = New System.Drawing.Point(268, 350)
         Me.VerUsuarios.Name = "VerUsuarios"
-        Me.VerUsuarios.Size = New System.Drawing.Size(75, 23)
+        Me.VerUsuarios.Size = New System.Drawing.Size(99, 23)
         Me.VerUsuarios.TabIndex = 3
         Me.VerUsuarios.Text = "Ver Usuarios"
         Me.VerUsuarios.UseVisualStyleBackColor = True
         '
         'AdminDGVUsuario
         '
+        Me.AdminDGVUsuario.AllowUserToAddRows = False
+        Me.AdminDGVUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.AdminDGVUsuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.AdminDGVUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AdminDGVUsuario.Location = New System.Drawing.Point(141, 183)
+        Me.AdminDGVUsuario.ColumnHeadersVisible = False
+        Me.AdminDGVUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Imag})
+        Me.AdminDGVUsuario.Location = New System.Drawing.Point(154, 183)
         Me.AdminDGVUsuario.Name = "AdminDGVUsuario"
-        Me.AdminDGVUsuario.Size = New System.Drawing.Size(705, 150)
+        Me.AdminDGVUsuario.Size = New System.Drawing.Size(715, 150)
         Me.AdminDGVUsuario.TabIndex = 2
         '
         'LabelAdmin
         '
         Me.LabelAdmin.AutoSize = True
         Me.LabelAdmin.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAdmin.Location = New System.Drawing.Point(730, 18)
+        Me.LabelAdmin.Location = New System.Drawing.Point(723, 15)
         Me.LabelAdmin.Name = "LabelAdmin"
         Me.LabelAdmin.Size = New System.Drawing.Size(49, 16)
         Me.LabelAdmin.TabIndex = 1
@@ -663,7 +674,7 @@ Partial Class Form1
         'BCerrarAdmin
         '
         Me.BCerrarAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BCerrarAdmin.Location = New System.Drawing.Point(807, 17)
+        Me.BCerrarAdmin.Location = New System.Drawing.Point(804, 35)
         Me.BCerrarAdmin.Name = "BCerrarAdmin"
         Me.BCerrarAdmin.Size = New System.Drawing.Size(107, 33)
         Me.BCerrarAdmin.TabIndex = 0
@@ -698,6 +709,32 @@ Partial Class Form1
         Me.LabelSupervisor.Size = New System.Drawing.Size(49, 16)
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(490, 351)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Ver Productos"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(613, 351)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(91, 23)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Imag
+        '
+        Me.Imag.HeaderText = "Imag"
+        Me.Imag.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.Imag.Name = "Imag"
+        Me.Imag.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Imag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'Form1
         '
@@ -795,4 +832,7 @@ Partial Class Form1
     Friend WithEvents AdminDGVUsuario As System.Windows.Forms.DataGridView
     Friend WithEvents VerUsuarios As System.Windows.Forms.Button
     Friend WithEvents ver As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Imag As System.Windows.Forms.DataGridViewImageColumn
 End Class

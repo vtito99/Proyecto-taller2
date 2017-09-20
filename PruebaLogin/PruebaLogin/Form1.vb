@@ -287,7 +287,8 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
-
+        AdminDGVUsuario.ColumnHeadersVisible = True
+        AdminDGVUsuario.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
 
         usuario.mostrarUsuarios(AdminDGVUsuario)
@@ -295,11 +296,56 @@
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        AdminDGVUsuario.ColumnHeadersVisible = True
+        AdminDGVUsuario.Columns("Imag").Visible = False
         Dim cliente As New C_Cliente
 
         cliente.mostrarClientes(AdminDGVUsuario)
 
     End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        AdminDGVUsuario.Columns("Imag").Visible = True
+        Dim producto As New C_Producto
+        producto.TraerDatos()
+
+        Dim img As Image
+
+
+        producto.mostrarProductos(AdminDGVUsuario)
+        For Each fila As DataGridViewRow In AdminDGVUsuario.Rows
+            AdminDGVUsuario.ColumnHeadersVisible = True
+            AdminDGVUsuario.Columns("Ruta").Visible = False
+
+            If producto.VerificarP(fila.Cells("Ruta").Value) Then
+
+                img = Image.FromFile(fila.Cells("Ruta").Value)
+                fila.Cells("Imag").Value = img
+
+            End If
+
+        Next
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #End Region
@@ -308,5 +354,6 @@
 
 
 
+    
     
 End Class
