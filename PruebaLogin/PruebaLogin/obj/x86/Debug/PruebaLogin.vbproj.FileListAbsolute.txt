@@ -38,3 +38,17 @@ C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\P
 C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.Resources.resources
 C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\CECY\Documents\Proyecto-taller2\PruebaLogin\PruebaLogin\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\bin\Debug\PruebaLogin.exe.config
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.exe
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.xml
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.pdb
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\bin\Debug\PruebaLogin.exe
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\bin\Debug\PruebaLogin.pdb
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\bin\Debug\PruebaLogin.xml
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.BarraCarga.resources
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.Form1.resources
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.Login.resources
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\PruebaLogin.Resources.resources
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\CECY\Desktop\PruebaLogin\PruebaLogin\obj\x86\Debug\GenerateResource.write.1.tlog

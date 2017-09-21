@@ -35,6 +35,9 @@
                     PanelAdmin.Visible = True
                     PanelVendedor.Visible = False
                     PanelSupervisor.Visible = False
+                    Panel1.Visible = False
+                    Panel2.Visible = False
+                    Panel3.Visible = False
 
                 Else
 
@@ -287,7 +290,11 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
-
+        Panel3.Visible = False
+        Panel2.Visible = False
+        Panel1.Visible = True
+        AdminDGVUsuario.ColumnHeadersVisible = True
+        AdminDGVUsuario.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
 
         usuario.mostrarUsuarios(AdminDGVUsuario)
@@ -295,11 +302,61 @@
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        Panel2.Visible = True
+        Panel1.Visible = False
+        Panel3.Visible = False
+        AdminDGVUsuario.ColumnHeadersVisible = True
+        AdminDGVUsuario.Columns("Imag").Visible = False
         Dim cliente As New C_Cliente
 
         cliente.mostrarClientes(AdminDGVUsuario)
 
     End Sub
+
+    Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Panel2.Visible = False
+        Panel1.Visible = False
+        Panel3.Visible = True
+        AdminDGVUsuario.Columns("Imag").Visible = True
+        Dim producto As New C_Producto
+        producto.TraerDatos()
+
+        Dim img As Image
+
+
+        producto.mostrarProductos(AdminDGVUsuario)
+        For Each fila As DataGridViewRow In AdminDGVUsuario.Rows
+            AdminDGVUsuario.ColumnHeadersVisible = True
+            AdminDGVUsuario.Columns("Ruta").Visible = False
+
+            If producto.VerificarP(fila.Cells("Ruta").Value) Then
+
+                img = Image.FromFile(fila.Cells("Ruta").Value)
+                fila.Cells("Imag").Value = img
+
+            End If
+
+        Next
+    End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #End Region
@@ -308,5 +365,6 @@
 
 
 
+    
     
 End Class
