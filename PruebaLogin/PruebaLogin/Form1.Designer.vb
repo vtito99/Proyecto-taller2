@@ -26,13 +26,6 @@ Partial Class Form1
         Me.PanelProduc = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.DGVProdAgre = New System.Windows.Forms.DataGridView()
-        Me.Quitar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Img = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Productos = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BVerTodoProd = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -77,17 +70,27 @@ Partial Class Form1
         Me.BCerrarVendedor = New System.Windows.Forms.Button()
         Me.LabelVendedor = New System.Windows.Forms.Label()
         Me.PanelAdmin = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ver = New System.Windows.Forms.Button()
         Me.VerUsuarios = New System.Windows.Forms.Button()
         Me.AdminDGVUsuario = New System.Windows.Forms.DataGridView()
+        Me.Imag = New System.Windows.Forms.DataGridViewImageColumn()
         Me.LabelAdmin = New System.Windows.Forms.Label()
         Me.BCerrarAdmin = New System.Windows.Forms.Button()
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Imag = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Quitar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Img = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Productos = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modelo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +107,7 @@ Partial Class Form1
         '
         'PanelVendedor
         '
-        Me.PanelVendedor.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.PanelVendedor.BackColor = System.Drawing.Color.SteelBlue
         Me.PanelVendedor.Controls.Add(Me.PanelProduc)
         Me.PanelVendedor.Controls.Add(Me.PanelAgregar)
         Me.PanelVendedor.Controls.Add(Me.BPanelProduc)
@@ -154,54 +157,15 @@ Partial Class Form1
         Me.DGVProdAgre.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGVProdAgre.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGVProdAgre.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DGVProdAgre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVProdAgre.ColumnHeadersVisible = False
         Me.DGVProdAgre.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Quitar, Me.Img, Me.Productos, Me.Modelo, Me.Categoria, Me.Stock, Me.Precio})
         Me.DGVProdAgre.Location = New System.Drawing.Point(16, 437)
+        Me.DGVProdAgre.MinimumSize = New System.Drawing.Size(0, 200)
         Me.DGVProdAgre.Name = "DGVProdAgre"
         Me.DGVProdAgre.Size = New System.Drawing.Size(666, 243)
         Me.DGVProdAgre.TabIndex = 28
-        '
-        'Quitar
-        '
-        Me.Quitar.DataPropertyName = "Quitar"
-        Me.Quitar.HeaderText = "Quitar"
-        Me.Quitar.Name = "Quitar"
-        Me.Quitar.Text = "Quitar"
-        Me.Quitar.ToolTipText = "Quitar"
-        Me.Quitar.UseColumnTextForButtonValue = True
-        '
-        'Img
-        '
-        Me.Img.HeaderText = "Img"
-        Me.Img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.Img.Name = "Img"
-        Me.Img.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'Productos
-        '
-        Me.Productos.HeaderText = "Productos"
-        Me.Productos.Name = "Productos"
-        '
-        'Modelo
-        '
-        Me.Modelo.HeaderText = "Modelo"
-        Me.Modelo.Name = "Modelo"
-        '
-        'Categoria
-        '
-        Me.Categoria.HeaderText = "Categoria"
-        Me.Categoria.Name = "Categoria"
-        '
-        'Stock
-        '
-        Me.Stock.HeaderText = "Stock"
-        Me.Stock.Name = "Stock"
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
         '
         'BVerTodoProd
         '
@@ -616,6 +580,9 @@ Partial Class Form1
         'PanelAdmin
         '
         Me.PanelAdmin.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelAdmin.Controls.Add(Me.Panel3)
+        Me.PanelAdmin.Controls.Add(Me.Panel2)
+        Me.PanelAdmin.Controls.Add(Me.Panel1)
         Me.PanelAdmin.Controls.Add(Me.Button2)
         Me.PanelAdmin.Controls.Add(Me.Button1)
         Me.PanelAdmin.Controls.Add(Me.ver)
@@ -629,6 +596,24 @@ Partial Class Form1
         Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
         Me.PanelAdmin.TabIndex = 0
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(613, 351)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(91, 23)
+        Me.Button2.TabIndex = 6
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(490, 351)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(93, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Ver Productos"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'ver
         '
         Me.ver.Location = New System.Drawing.Point(394, 350)
@@ -640,7 +625,7 @@ Partial Class Form1
         '
         'VerUsuarios
         '
-        Me.VerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.VerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.VerUsuarios.Location = New System.Drawing.Point(268, 350)
         Me.VerUsuarios.Name = "VerUsuarios"
         Me.VerUsuarios.Size = New System.Drawing.Size(99, 23)
@@ -656,10 +641,18 @@ Partial Class Form1
         Me.AdminDGVUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.AdminDGVUsuario.ColumnHeadersVisible = False
         Me.AdminDGVUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Imag})
-        Me.AdminDGVUsuario.Location = New System.Drawing.Point(154, 183)
+        Me.AdminDGVUsuario.Location = New System.Drawing.Point(154, 124)
         Me.AdminDGVUsuario.Name = "AdminDGVUsuario"
-        Me.AdminDGVUsuario.Size = New System.Drawing.Size(715, 150)
+        Me.AdminDGVUsuario.Size = New System.Drawing.Size(715, 209)
         Me.AdminDGVUsuario.TabIndex = 2
+        '
+        'Imag
+        '
+        Me.Imag.HeaderText = "Imag"
+        Me.Imag.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.Imag.Name = "Imag"
+        Me.Imag.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Imag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'LabelAdmin
         '
@@ -683,7 +676,7 @@ Partial Class Form1
         '
         'PanelSupervisor
         '
-        Me.PanelSupervisor.BackColor = System.Drawing.Color.OrangeRed
+        Me.PanelSupervisor.BackColor = System.Drawing.Color.SteelBlue
         Me.PanelSupervisor.Controls.Add(Me.BCerrarSuper)
         Me.PanelSupervisor.Controls.Add(Me.LabelSupervisor)
         Me.PanelSupervisor.Location = New System.Drawing.Point(0, 0)
@@ -710,39 +703,86 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
-        'Button1
+        'Panel1
         '
-        Me.Button1.Location = New System.Drawing.Point(490, 351)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Ver Productos"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Panel1.BackColor = System.Drawing.Color.Cyan
+        Me.Panel1.Location = New System.Drawing.Point(154, 15)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.TabIndex = 7
         '
-        'Button2
+        'Panel2
         '
-        Me.Button2.Location = New System.Drawing.Point(613, 351)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Panel2.BackColor = System.Drawing.Color.Lime
+        Me.Panel2.Location = New System.Drawing.Point(121, 15)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 100)
+        Me.Panel2.TabIndex = 8
         '
-        'Imag
+        'Panel3
         '
-        Me.Imag.HeaderText = "Imag"
-        Me.Imag.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
-        Me.Imag.Name = "Imag"
-        Me.Imag.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Imag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Panel3.BackColor = System.Drawing.Color.DarkOrange
+        Me.Panel3.Location = New System.Drawing.Point(90, 15)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(200, 100)
+        Me.Panel3.TabIndex = 9
+        '
+        'Quitar
+        '
+        Me.Quitar.DataPropertyName = "Quitar"
+        Me.Quitar.FillWeight = 237.9785!
+        Me.Quitar.HeaderText = "Quitar"
+        Me.Quitar.Name = "Quitar"
+        Me.Quitar.Text = "Quitar"
+        Me.Quitar.ToolTipText = "Quitar"
+        Me.Quitar.UseColumnTextForButtonValue = True
+        '
+        'Img
+        '
+        Me.Img.FillWeight = 426.3959!
+        Me.Img.HeaderText = "Img"
+        Me.Img.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.Img.Name = "Img"
+        Me.Img.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'Productos
+        '
+        Me.Productos.FillWeight = 7.125107!
+        Me.Productos.HeaderText = "Productos"
+        Me.Productos.Name = "Productos"
+        '
+        'Modelo
+        '
+        Me.Modelo.FillWeight = 7.125107!
+        Me.Modelo.HeaderText = "Modelo"
+        Me.Modelo.Name = "Modelo"
+        '
+        'Categoria
+        '
+        Me.Categoria.FillWeight = 7.125107!
+        Me.Categoria.HeaderText = "Categoria"
+        Me.Categoria.Name = "Categoria"
+        '
+        'Stock
+        '
+        Me.Stock.FillWeight = 7.125107!
+        Me.Stock.HeaderText = "Stock"
+        Me.Stock.Name = "Stock"
+        '
+        'Precio
+        '
+        Me.Precio.FillWeight = 7.125107!
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.Name = "Precio"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(974, 582)
-        Me.Controls.Add(Me.PanelAdmin)
         Me.Controls.Add(Me.PanelVendedor)
+        Me.Controls.Add(Me.PanelAdmin)
         Me.Controls.Add(Me.PanelSupervisor)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -822,6 +862,15 @@ Partial Class Form1
     Friend WithEvents DGVProdAgre As System.Windows.Forms.DataGridView
     Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents AdminDGVUsuario As System.Windows.Forms.DataGridView
+    Friend WithEvents VerUsuarios As System.Windows.Forms.Button
+    Friend WithEvents ver As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Imag As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Quitar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Img As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents Productos As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -829,10 +878,4 @@ Partial Class Form1
     Friend WithEvents Categoria As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Stock As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents AdminDGVUsuario As System.Windows.Forms.DataGridView
-    Friend WithEvents VerUsuarios As System.Windows.Forms.Button
-    Friend WithEvents ver As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Imag As System.Windows.Forms.DataGridViewImageColumn
 End Class

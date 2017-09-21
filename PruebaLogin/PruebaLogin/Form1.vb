@@ -35,6 +35,9 @@
                     PanelAdmin.Visible = True
                     PanelVendedor.Visible = False
                     PanelSupervisor.Visible = False
+                    Panel1.Visible = False
+                    Panel2.Visible = False
+                    Panel3.Visible = False
 
                 Else
 
@@ -287,6 +290,9 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
+        Panel3.Visible = False
+        Panel2.Visible = False
+        Panel1.Visible = True
         AdminDGVUsuario.ColumnHeadersVisible = True
         AdminDGVUsuario.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
@@ -296,6 +302,9 @@
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        Panel2.Visible = True
+        Panel1.Visible = False
+        Panel3.Visible = False
         AdminDGVUsuario.ColumnHeadersVisible = True
         AdminDGVUsuario.Columns("Imag").Visible = False
         Dim cliente As New C_Cliente
@@ -305,7 +314,9 @@
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-
+        Panel2.Visible = False
+        Panel1.Visible = False
+        Panel3.Visible = True
         AdminDGVUsuario.Columns("Imag").Visible = True
         Dim producto As New C_Producto
         producto.TraerDatos()
