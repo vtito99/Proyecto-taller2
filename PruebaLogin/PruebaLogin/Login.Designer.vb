@@ -44,7 +44,7 @@ Partial Class Login
         Me.GroupBox1.Controls.Add(Me.BIngresar)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Window
-        Me.GroupBox1.Location = New System.Drawing.Point(160, -1)
+        Me.GroupBox1.Location = New System.Drawing.Point(160, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(321, 222)
         Me.GroupBox1.TabIndex = 1
@@ -89,6 +89,10 @@ Partial Class Login
         'BSalir
         '
         Me.BSalir.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSalir.FlatAppearance.BorderSize = 0
+        Me.BSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BSalir.Location = New System.Drawing.Point(196, 180)
         Me.BSalir.Name = "BSalir"
         Me.BSalir.Size = New System.Drawing.Size(82, 33)
@@ -99,6 +103,10 @@ Partial Class Login
         'BIngresar
         '
         Me.BIngresar.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BIngresar.FlatAppearance.BorderSize = 0
+        Me.BIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.BIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BIngresar.Location = New System.Drawing.Point(46, 180)
         Me.BIngresar.Name = "BIngresar"
         Me.BIngresar.Size = New System.Drawing.Size(82, 33)
@@ -121,7 +129,7 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.MidnightBlue
+        Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(492, 241)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)

@@ -81,6 +81,19 @@
         End Using
     End Sub
 
+    Public Sub mProductos(ByVal grid As DataGridView, ByVal nombre As String, ByVal tipo As String)
+
+        Using base As New dbPruebaBoschEntities
+
+            Dim mostrar = (From q In base.Producto
+                           Where (q.nombre = nombre And q.TipoProducto.descripcion = tipo)
+                           Select Productos = q.nombre, Modelo = q.descripcion, Categoria = q.TipoProducto.descripcion,
+                                  Stock = q.stock, Precio = q.precio, Ruta = q.ruta_img).ToList
+
+            grid.DataSource = mostrar
+        End Using
+    End Sub
+
     Public Function TraerDatos()
         Try
             Using db As New dbPruebaBoschEntities
