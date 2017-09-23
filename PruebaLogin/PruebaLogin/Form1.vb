@@ -35,6 +35,9 @@
                     PanelAdmin.Visible = True
                     PanelVendedor.Visible = False
                     PanelSupervisor.Visible = False
+                    Panel1.Visible = False
+                    Panel2.Visible = False
+                    Panel3.Visible = False
 
                 Else
 
@@ -154,6 +157,7 @@
         PanelAgregar.Visible = True
         PanelMostrar.Visible = False
         PanelProduc.Visible = False
+        TBDni.Clear()
     End Sub
 #End Region
 
@@ -197,19 +201,45 @@
                 If repuesta = 6 Then
                     PanelProduc.Visible = False
                     PanelAgregar.Visible = True
+                    BVerificar.Enabled = False
+                    TBDni.Text = TBPDni.Text
+                    GroupBox1.Enabled = True
                 End If
             End If
         End If
     End Sub
 
     Private Sub BVerTodoProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BVerTodoProd.Click
+        mostrar()
+        'Dim producto As New C_Producto
+        'producto.TraerDatos()
 
+        'Dim img As Image
+
+        
+        'producto.mostrarProductos(DGVProd)
+        'For Each fila As DataGridViewRow In DGVProd.Rows
+        'DGVProd.ColumnHeadersVisible = True
+        'DGVProd.Columns("Ruta").Visible = False
+
+        'If Producto.VerificarP(fila.Cells("Ruta").Value) Then
+
+        'Img = Image.FromFile(fila.Cells("Ruta").Value)
+        'fila.Cells("Imagen").Value = Img
+
+        'End If
+
+        'Next
+
+    End Sub
+
+    Public Sub mostrar()
         Dim producto As New C_Producto
         producto.TraerDatos()
 
         Dim img As Image
 
-        
+
         producto.mostrarProductos(DGVProd)
         For Each fila As DataGridViewRow In DGVProd.Rows
             DGVProd.ColumnHeadersVisible = True
@@ -223,11 +253,10 @@
             End If
 
         Next
-
     End Sub
 
     Private Sub DataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVProd.CellContentClick
-        'Dim respuesta As MsgBoxResult
+
         Dim cell As DataGridViewButtonCell = TryCast(DGVProd.CurrentCell, DataGridViewButtonCell)
 
         If cell IsNot Nothing Then
@@ -236,41 +265,129 @@
                 Dim s As String = Convert.ToString(cell.Value)
                 Select Case bc.Name
                     Case "Agregar"
-                        'DataGrid.Rows.RemoveAt(e.RowIndex)
-                        'respuesta = MsgBox("¿Desea Eliminar este registro?", 4 + 256 + 48, "Confirmar Eliminación")
-                        'Valor de retorno 6 = vbYes
-                        'If respuesta = 6 Then
-
-                        'Dim i As Integer
-                        'i = DataGrid.CurrentRow.Index
-                        'DataGrid.Rows.RemoveAt(i)
-                        Dim Producto, Modelo, Categoria, Stock, Precio As String
+                        Dim prod As New C_Producto
+                        Dim Producto, Modelo, Categoria As String
                         Dim imag As Image
+                        Dim cantidad As Integer = 0
+                        Dim resta As Integer = 0
+                        Dim Precio As Integer
+                        Dim stock As Integer = 0
+
 
                         imag = DGVProd(1, DGVProd.CurrentRow.Index).Value
                         Producto = DGVProd(2, DGVProd.CurrentRow.Index).Value
                         Modelo = DGVProd(3, DGVProd.CurrentRow.Index).Value
                         Categoria = DGVProd(4, DGVProd.CurrentRow.Index).Value
-                        Stock = DGVProd(5, DGVProd.CurrentRow.Index).Value
+                        cantidad = 1
                         Precio = DGVProd(6, DGVProd.CurrentRow.Index).Value
+                        resta = DGVProd(6, DGVProd.CurrentRow.Index).Value
 
 
+                        Using base As New dbPruebaBoschEntities
+                            Dim consul = (From q In base.Producto
+                                          Where q.descripcion = Modelo
+                                          Select q).First
+                            consul.stock = (consul.stock - 1)
+                            base.SaveChanges()
+                        End Using
 
-                        DGVProdAgre.Rows.Add("", imag, Producto, Modelo, Categoria, Stock, Precio)
-                        'MsgBox("El registro se eliminó correctamente", 0 + 0 + 64, "Eliminar")
+                        mostrar()
 
-                        'End If
+                        Dim existe As Boolean = Me.DGVProdAgre.Rows.Cast(Of DataGridViewRow).Any(Function(x) CStr(x.Cells("Modelo").Value) = Modelo)
+
+                        If Not existe Then
+
+                            DGVProdAgre.Rows.Add("", imag, Producto, Modelo, Categoria, cantidad, Precio, resta)
+
+                        Else
+
+                            For Each fila As DataGridViewRow In DGVProdAgre.Rows
+
+                                If fila.Cells("Modelo").Value = Modelo Then
+
+                                    cantidad = Convert.ToInt64(fila.Cells("Cantidad").Value) + 1
+                                    fila.Cells("Cantidad").Value = cantidad
+
+                                    fila.Cells("Precio").Value = Precio * cantidad
+
+                                End If
+                            Next
+                        End If
                         Exit Select
                 End Select
 
             End If
         End If
-
-
-
-
     End Sub
 
+    Private Sub BBuscarProduc_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BBuscarProduc.Click
+        Dim producto As New C_Producto
+        producto.TraerDatos()
+
+        Dim img As Image
+
+        producto.mProductos(DGVProd, CBProductos.Text, CBTipoProd.Text)
+
+        For Each fila As DataGridViewRow In DGVProd.Rows
+            DGVProd.ColumnHeadersVisible = True
+            DGVProd.Columns("Ruta").Visible = False
+         
+            If producto.VerificarP(fila.Cells("Ruta").Value) Then
+
+                img = Image.FromFile(fila.Cells("Ruta").Value)
+                fila.Cells("Imagen").Value = img
+
+            End If
+        Next
+    End Sub
+
+    Private Sub DataGrid_CellContentClick1(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGVProdAgre.CellContentClick
+
+        Dim cell As DataGridViewButtonCell = TryCast(DGVProdAgre.CurrentCell, DataGridViewButtonCell)
+
+        If cell IsNot Nothing Then
+            Dim bc As DataGridViewButtonColumn = TryCast(DGVProdAgre.Columns(e.ColumnIndex), DataGridViewButtonColumn)
+            If bc IsNot Nothing Then
+                Dim s As String = Convert.ToString(cell.Value)
+                Select Case bc.Name
+                    Case "Quitar"
+                        
+                        Dim cantidad As Integer = 0
+                        Dim precio As Integer = 0
+                        Dim restaPrecio As Integer = 0
+
+                        Dim Modelo As String = DGVProdAgre(3, DGVProdAgre.CurrentRow.Index).Value
+
+                        cantidad = DGVProdAgre(5, DGVProdAgre.CurrentRow.Index).Value - 1
+                        DGVProdAgre(5, DGVProdAgre.CurrentRow.Index).Value = cantidad
+
+                        precio = DGVProdAgre(7, DGVProdAgre.CurrentRow.Index).Value
+                        restaPrecio = DGVProdAgre(6, DGVProdAgre.CurrentRow.Index).Value
+
+                        DGVProdAgre(6, DGVProdAgre.CurrentRow.Index).Value = restaPrecio - precio
+
+
+                        If DGVProdAgre(5, DGVProdAgre.CurrentRow.Index).Value = 0 Then
+                            DGVProdAgre.Rows.RemoveAt(e.RowIndex)
+                            
+                        End If
+
+                        Using base As New dbPruebaBoschEntities
+                            Dim consul = (From q In base.Producto
+                                          Where q.descripcion = Modelo
+                                          Select q).First
+                            consul.stock = (consul.stock + 1)
+                            base.SaveChanges()
+                        End Using
+
+                        mostrar()
+                        
+                        Exit Select
+                End Select
+
+            End If
+        End If
+    End Sub
 #End Region
 #End Region
 
@@ -287,6 +404,9 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
+        Panel3.Visible = False
+        Panel2.Visible = False
+        Panel1.Visible = True
         AdminDGVUsuario.ColumnHeadersVisible = True
         AdminDGVUsuario.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
@@ -296,6 +416,9 @@
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        Panel2.Visible = True
+        Panel1.Visible = False
+        Panel3.Visible = False
         AdminDGVUsuario.ColumnHeadersVisible = True
         AdminDGVUsuario.Columns("Imag").Visible = False
         Dim cliente As New C_Cliente
@@ -305,7 +428,9 @@
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-
+        Panel2.Visible = False
+        Panel1.Visible = False
+        Panel3.Visible = True
         AdminDGVUsuario.Columns("Imag").Visible = True
         Dim producto As New C_Producto
         producto.TraerDatos()
@@ -350,10 +475,8 @@
 
 #End Region
 
+#Region "Supervisor"
 
+#End Region
 
-
-
-    
-    
 End Class

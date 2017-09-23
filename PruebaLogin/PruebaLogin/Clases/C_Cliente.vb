@@ -100,7 +100,9 @@
     'Metodo Mostrar Clientes
     Public Sub mostrar(ByVal grid As DataGridView)
         Using base As New dbPruebaBoschEntities
-            Dim mostrar = (From q In base.Cliente Select q).ToList
+            Dim mostrar = (From q In base.Cliente
+                           Select Dni = q.dni_cliente, Apellido = q.apellido, Nombre = q.nombre, Nacimiento = q.fechaNacimiento,
+                           Direccion = q.direccion, Telefono = q.telefono, Correo = q.mail).ToList
             grid.DataSource = mostrar
         End Using
     End Sub
