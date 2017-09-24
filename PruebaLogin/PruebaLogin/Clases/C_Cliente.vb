@@ -193,5 +193,22 @@
     End Sub
 
 
+    Public Sub mostrarPorDni(ByVal grid As DataGridView, ByVal texto As Integer)
+
+        Using base As New dbPruebaBoschEntities
+            Dim consul = (From q In base.Cliente
+            Where (q.dni_cliente = texto)
+                         Select Dni = q.dni_cliente, Nombre = q.nombre, Apellido = q.apellido, Direccion = q.direccion, Telefono = q.telefono,
+                                  Fecha = q.fechaNacimiento, Mail = q.mail).ToList
+
+
+            grid.DataSource = consul
+
+        End Using
+
+
+    End Sub
+
+
 
 End Class

@@ -143,6 +143,21 @@
         End Using
     End Sub
 
+    Public Sub mostrarPorTipo(ByVal grid As DataGridView, ByVal tipo As String)
+
+        Using base As New dbPruebaBoschEntities
+            Dim consul = (From q In base.Usuario
+            Where (q.tipoUsuario = tipo)
+                         Select id = q.id, Pass = q.pass, Nombre = q.nombre, Apellido = q.apellido, TipoUsuario = q.tipoUsuario,
+                                  Fecha = q.fechaNacimiento, Mail = q.mail).ToList
+
+
+            grid.DataSource = consul
+
+        End Using
+
+
+    End Sub
 
 
 

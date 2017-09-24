@@ -35,9 +35,9 @@
                     PanelAdmin.Visible = True
                     PanelVendedor.Visible = False
                     PanelSupervisor.Visible = False
-                    Panel1.Visible = False
-                    Panel2.Visible = False
-                    Panel3.Visible = False
+                    PanelUsuarios.Visible = False
+                    PanelClientes.Visible = False
+                    PanelPro.Visible = False
 
                 Else
 
@@ -216,7 +216,7 @@
 
         'Dim img As Image
 
-        
+
         'producto.mostrarProductos(DGVProd)
         'For Each fila As DataGridViewRow In DGVProd.Rows
         'DGVProd.ColumnHeadersVisible = True
@@ -328,10 +328,11 @@
 
         producto.mProductos(DGVProd, CBProductos.Text, CBTipoProd.Text)
 
+
         For Each fila As DataGridViewRow In DGVProd.Rows
             DGVProd.ColumnHeadersVisible = True
             DGVProd.Columns("Ruta").Visible = False
-         
+
             If producto.VerificarP(fila.Cells("Ruta").Value) Then
 
                 img = Image.FromFile(fila.Cells("Ruta").Value)
@@ -351,7 +352,7 @@
                 Dim s As String = Convert.ToString(cell.Value)
                 Select Case bc.Name
                     Case "Quitar"
-                        
+
                         Dim cantidad As Integer = 0
                         Dim precio As Integer = 0
                         Dim restaPrecio As Integer = 0
@@ -369,7 +370,7 @@
 
                         If DGVProdAgre(5, DGVProdAgre.CurrentRow.Index).Value = 0 Then
                             DGVProdAgre.Rows.RemoveAt(e.RowIndex)
-                            
+
                         End If
 
                         Using base As New dbPruebaBoschEntities
@@ -381,7 +382,7 @@
                         End Using
 
                         mostrar()
-                        
+
                         Exit Select
                 End Select
 
@@ -395,7 +396,7 @@
 
 #Region "Administrador"
 
-    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles AdminDGVUsuario.CellContentClick
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles AdminDGV.CellContentClick
 
 
 
@@ -404,44 +405,49 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
-        Panel3.Visible = False
-        Panel2.Visible = False
-        Panel1.Visible = True
-        AdminDGVUsuario.ColumnHeadersVisible = True
-        AdminDGVUsuario.Columns("Imag").Visible = False
+        PanelPro.Visible = False
+        PanelClientes.Visible = False
+        PanelUsuarios.Visible = True
+        AdminDGV.ColumnHeadersVisible = True
+        AdminDGV.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
 
-        usuario.mostrarUsuarios(AdminDGVUsuario)
+
+        ComboBox1.SelectedIndex = 0
+
+        usuario.mostrarUsuarios(AdminDGV)
 
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
-        Panel2.Visible = True
-        Panel1.Visible = False
-        Panel3.Visible = False
-        AdminDGVUsuario.ColumnHeadersVisible = True
-        AdminDGVUsuario.Columns("Imag").Visible = False
-        Dim cliente As New C_Cliente
+        PanelClientes.Visible = True
+        PanelUsuarios.Visible = False
+        PanelPro.Visible = False
+        AdminDGV.ColumnHeadersVisible = True
+        AdminDGV.Columns("Imag").Visible = False
 
-        cliente.mostrarClientes(AdminDGVUsuario)
+        TBDniCliente.Clear()
+        'Dim cliente As New C_Cliente
+
+        cliente.mostrarClientes(AdminDGV)
 
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Panel2.Visible = False
-        Panel1.Visible = False
-        Panel3.Visible = True
-        AdminDGVUsuario.Columns("Imag").Visible = True
+        PanelClientes.Visible = False
+        PanelUsuarios.Visible = False
+        PanelPro.Visible = True
+        AdminDGV.Columns("Imag").Visible = True
         Dim producto As New C_Producto
         producto.TraerDatos()
 
         Dim img As Image
 
 
-        producto.mostrarProductos(AdminDGVUsuario)
-        For Each fila As DataGridViewRow In AdminDGVUsuario.Rows
-            AdminDGVUsuario.ColumnHeadersVisible = True
-            AdminDGVUsuario.Columns("Ruta").Visible = False
+        producto.mostrarProductos(AdminDGV)
+        For Each fila As DataGridViewRow In AdminDGV.Rows
+            AdminDGV.ColumnHeadersVisible = True
+            AdminDGV.Columns("Ruta").Visible = False
 
             If producto.VerificarP(fila.Cells("Ruta").Value) Then
 
@@ -479,4 +485,45 @@
 
 #End Region
 
+    Private Sub Panel1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PanelUsuarios.Paint
+
+
+    End Sub
+
+
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+
+        Dim item = ComboBox1.SelectedItem.ToString
+
+        usuario.mostrarPorTipo(AdminDGV, item)
+
+
+    End Sub
+
+
+    Dim usuario As New C_Usuario
+
+
+
+
+
+
+
+
+    Private Sub TBNombreCliente_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TBDniCliente.TextChanged
+
+    End Sub
+
+    Private Sub TBNombreCliente_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBDniCliente.KeyPress
+        If e.KeyChar = Chr(13) Then
+
+            Dim dni As Integer
+            dni = TBDniCliente.Text
+            cliente.mostrarPorDni(AdminDGV, dni)
+
+
+
+        End If
+    End Sub
 End Class

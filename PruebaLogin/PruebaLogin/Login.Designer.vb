@@ -49,7 +49,7 @@ Partial Class Login
         Me.GroupBox1.Size = New System.Drawing.Size(321, 222)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Inciar Sesión"
+        Me.GroupBox1.Text = "Iniciar Sesión"
         '
         'Label2
         '
