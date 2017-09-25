@@ -42,9 +42,16 @@
                 Else
 
                     LabelSupervisor.Text = "Supervisor: " & usuario.getNombre & " " & usuario.getApellido
+                    Label18.Visible = False
                     PanelSupervisor.Visible = True
                     PanelAdmin.Visible = False
                     PanelVendedor.Visible = False
+                    DGVSupervisor.Visible = False
+                    BSVolver.Visible = False
+                    PanelBotones1.Visible = False
+                    PanelBotones2.Visible = False
+                    PanelSModifCliente.Visible = False
+
 
                 End If
             End Using
@@ -216,7 +223,7 @@
 
         'Dim img As Image
 
-        
+
         'producto.mostrarProductos(DGVProd)
         'For Each fila As DataGridViewRow In DGVProd.Rows
         'DGVProd.ColumnHeadersVisible = True
@@ -331,7 +338,7 @@
         For Each fila As DataGridViewRow In DGVProd.Rows
             DGVProd.ColumnHeadersVisible = True
             DGVProd.Columns("Ruta").Visible = False
-         
+
             If producto.VerificarP(fila.Cells("Ruta").Value) Then
 
                 img = Image.FromFile(fila.Cells("Ruta").Value)
@@ -351,7 +358,7 @@
                 Dim s As String = Convert.ToString(cell.Value)
                 Select Case bc.Name
                     Case "Quitar"
-                        
+
                         Dim cantidad As Integer = 0
                         Dim precio As Integer = 0
                         Dim restaPrecio As Integer = 0
@@ -369,7 +376,7 @@
 
                         If DGVProdAgre(5, DGVProdAgre.CurrentRow.Index).Value = 0 Then
                             DGVProdAgre.Rows.RemoveAt(e.RowIndex)
-                            
+
                         End If
 
                         Using base As New dbPruebaBoschEntities
@@ -381,7 +388,7 @@
                         End Using
 
                         mostrar()
-                        
+
                         Exit Select
                 End Select
 
@@ -477,6 +484,134 @@
 
 #Region "Supervisor"
 
+    Private Sub BSGestionCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSGestionCliente.Click
+        Label18.Visible = True
+        Label18.Text = "GESTION CLIENTE"
+        DGVSupervisor.ColumnHeadersVisible = False
+        DGVSupervisor.DataSource = Nothing
+        DGVSupervisor.Visible = True
+        BSVolver.Visible = True
+        PanelBotones1.Visible = True
+        PanelBotones2.Visible = False
+    End Sub
+
+    Private Sub BSVerCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSVerCliente.Click
+        Label18.Text = "LISTA DE CLIENTES"
+        PanelSModifCliente.Visible = False
+        DGVSupervisor.ColumnHeadersVisible = Visible
+        DGVSupervisor.Columns("Imagenes").Visible = False
+        cliente.mostrarClientes(DGVSupervisor)
+    End Sub
+
+    Private Sub BSVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSVolver.Click
+        Label18.Visible = False
+        DGVSupervisor.Visible = False
+        PanelBotones1.Visible = False
+        PanelBotones2.Visible = False
+        PanelSModifCliente.Visible = False
+        BSVolver.Visible = False
+    End Sub
+
+    Private Sub BSVerProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSVerProd.Click
+        Label18.Visible = True
+        Label18.Text = "LISTA DE PRODUCTOS"
+        Dim producto As New C_Producto
+        producto.TraerDatos()
+
+        Dim img As Image
+        DGVSupervisor.Columns("Imagenes").Visible = True
+
+        producto.mostrarProductos(DGVSupervisor)
+        For Each fila As DataGridViewRow In DGVSupervisor.Rows
+            DGVSupervisor.ColumnHeadersVisible = True
+            DGVSupervisor.Columns("Ruta").Visible = False
+
+            If producto.VerificarP(fila.Cells("Ruta").Value) Then
+
+                img = Image.FromFile(fila.Cells("Ruta").Value)
+                fila.Cells("Imagenes").Value = img
+
+            End If
+
+        Next
+    End Sub
+
+    Private Sub BSGestionProd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSGestionProd.Click
+        Label18.Visible = True
+        Label18.Text = "GESTION PRODUCTOS"
+        DGVSupervisor.ColumnHeadersVisible = False
+        DGVSupervisor.DataSource = Nothing
+        DGVSupervisor.Visible = True
+        PanelBotones2.Visible = True
+        PanelBotones1.Visible = False
+        PanelSModifCliente.Visible = False
+        BSVolver.Visible = True
+    End Sub
+
+    Private Sub TBSDni_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBSDni.KeyPress
+        TBSDni.MaxLength = 8
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub BSModifCliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSModifCliente.Click
+        Label18.Text = "MODIFICAR CLIENTE"
+        PanelSModifCliente.Visible = True
+    End Sub
+
+    Private Sub BSCancelarAltaCli_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSCancelarAltaCli.Click
+        GroupBox2.Enabled = False
+
+        TBSDni.Clear()
+        TBSNomCliente.Clear()
+        TBSApeCliente.Clear()
+        TBSDirCliente.Clear()
+        TBSTelCliente.Clear()
+        DTPSNacCliente.Text = System.DateTime.Today
+        TBSCorreoCliente.Clear()
+    End Sub
+
+    Private Sub BSVerificarClente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BSVerificarClente.Click
+        If Len(Trim(TBSDni.Text)) = 0 Then
+            MsgBox("Ingrese Dni del Cliente para su verificación", 0 + 0 + 16, "Error")
+
+        Else
+
+            Dim cliente As New C_Cliente(TBSDni.Text)
+            If cliente.Verificar(cliente.getDni) Then
+                Try
+                    Using db As New dbPruebaBoschEntities
+                        cliente.TraerDatos(cliente.getDni)
+
+                        GroupBox2.Enabled = True
+
+                        TBSNomCliente.Text = cliente.getNombre
+                        TBSApeCliente.Text = cliente.getApellido
+                        TBSDirCliente.Text = cliente.getDireccion
+                        TBSTelCliente.Text = cliente.getTelefono
+                        DTPSNacCliente.Text = cliente.getNacimiento
+                        TBSCorreoCliente.Text = cliente.getCorreo
+                    End Using
+                Catch ex As Exception
+                    MsgBox("Error al cargar los datos", 0 + 0 + 16, "Error")
+                End Try
+
+            Else
+                MsgBox("El Cliente no se encuentra registrado", 0 + 0 + 16, "Error")
+                TBSDni.Clear()
+            End If
+        End If
+    End Sub
 #End Region
+
+   
+    
 
 End Class
