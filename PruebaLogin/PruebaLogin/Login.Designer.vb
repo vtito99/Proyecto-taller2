@@ -89,6 +89,7 @@ Partial Class Login
         'BSalir
         '
         Me.BSalir.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSalir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BSalir.FlatAppearance.BorderSize = 0
         Me.BSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.BSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
@@ -103,6 +104,7 @@ Partial Class Login
         'BIngresar
         '
         Me.BIngresar.BackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BIngresar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BIngresar.FlatAppearance.BorderSize = 0
         Me.BIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.BIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
