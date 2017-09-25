@@ -22,8 +22,8 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelVendedor = New System.Windows.Forms.Panel()
         Me.PanelProduc = New System.Windows.Forms.Panel()
         Me.CBProductos = New System.Windows.Forms.ComboBox()
@@ -80,18 +80,23 @@ Partial Class Form1
         Me.BCerrarVendedor = New System.Windows.Forms.Button()
         Me.LabelVendedor = New System.Windows.Forms.Label()
         Me.PanelAdmin = New System.Windows.Forms.Panel()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PanelPro = New System.Windows.Forms.Panel()
+        Me.PanelClientes = New System.Windows.Forms.Panel()
+        Me.PanelUsuarios = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ver = New System.Windows.Forms.Button()
         Me.VerUsuarios = New System.Windows.Forms.Button()
-        Me.AdminDGVUsuario = New System.Windows.Forms.DataGridView()
+        Me.AdminDGV = New System.Windows.Forms.DataGridView()
         Me.Imag = New System.Windows.Forms.DataGridViewImageColumn()
         Me.LabelAdmin = New System.Windows.Forms.Label()
         Me.BCerrarAdmin = New System.Windows.Forms.Button()
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BSGestionCliente = New System.Windows.Forms.Button()
+        Me.BSFacturas = New System.Windows.Forms.Button()
+        Me.BSGestionProd = New System.Windows.Forms.Button()
         Me.PanelSModifCliente = New System.Windows.Forms.Panel()
         Me.BSCancelarAltaCli = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -126,14 +131,8 @@ Partial Class Form1
         Me.BSVolver = New System.Windows.Forms.Button()
         Me.DGVSupervisor = New System.Windows.Forms.DataGridView()
         Me.Imagenes = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.BSFacturas = New System.Windows.Forms.Button()
-        Me.BSGestionProd = New System.Windows.Forms.Button()
-        Me.BSGestionCliente = New System.Windows.Forms.Button()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -144,14 +143,14 @@ Partial Class Form1
         Me.PanelMostrar.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAdmin.SuspendLayout()
-        CType(Me.AdminDGVUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSupervisor.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.PanelSModifCliente.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.PanelBotones1.SuspendLayout()
         Me.PanelBotones2.SuspendLayout()
         CType(Me.DGVSupervisor, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelVendedor
@@ -229,13 +228,13 @@ Partial Class Form1
         '
         Me.Quitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Quitar.DataPropertyName = "Quitar"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowFrame
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        Me.Quitar.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.WindowFrame
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.Quitar.DefaultCellStyle = DataGridViewCellStyle1
         Me.Quitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Quitar.HeaderText = "Quitar"
         Me.Quitar.Name = "Quitar"
@@ -403,13 +402,13 @@ Partial Class Form1
         '
         Me.Agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Agregar.DataPropertyName = "Agregar"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.WindowFrame
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle2
         Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Agregar.HeaderText = "Agregar"
         Me.Agregar.Name = "Agregar"
@@ -710,14 +709,13 @@ Partial Class Form1
         'PanelAdmin
         '
         Me.PanelAdmin.BackColor = System.Drawing.Color.SteelBlue
-        Me.PanelAdmin.Controls.Add(Me.Panel3)
-        Me.PanelAdmin.Controls.Add(Me.Panel2)
-        Me.PanelAdmin.Controls.Add(Me.Panel1)
-        Me.PanelAdmin.Controls.Add(Me.Button2)
+        Me.PanelAdmin.Controls.Add(Me.PanelPro)
+        Me.PanelAdmin.Controls.Add(Me.PanelClientes)
+        Me.PanelAdmin.Controls.Add(Me.PanelUsuarios)
         Me.PanelAdmin.Controls.Add(Me.Button1)
         Me.PanelAdmin.Controls.Add(Me.ver)
         Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
-        Me.PanelAdmin.Controls.Add(Me.AdminDGVUsuario)
+        Me.PanelAdmin.Controls.Add(Me.AdminDGV)
         Me.PanelAdmin.Controls.Add(Me.LabelAdmin)
         Me.PanelAdmin.Controls.Add(Me.BCerrarAdmin)
         Me.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
@@ -726,38 +724,29 @@ Partial Class Form1
         Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
         Me.PanelAdmin.TabIndex = 0
         '
-        'Panel3
+        'PanelPro
         '
-        Me.Panel3.BackColor = System.Drawing.Color.DarkOrange
-        Me.Panel3.Location = New System.Drawing.Point(90, 15)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(200, 100)
-        Me.Panel3.TabIndex = 9
+        Me.PanelPro.BackColor = System.Drawing.Color.DarkOrange
+        Me.PanelPro.Location = New System.Drawing.Point(90, 15)
+        Me.PanelPro.Name = "PanelPro"
+        Me.PanelPro.Size = New System.Drawing.Size(200, 100)
+        Me.PanelPro.TabIndex = 9
         '
-        'Panel2
+        'PanelClientes
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Lime
-        Me.Panel2.Location = New System.Drawing.Point(121, 15)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 100)
-        Me.Panel2.TabIndex = 8
+        Me.PanelClientes.BackColor = System.Drawing.Color.Lime
+        Me.PanelClientes.Location = New System.Drawing.Point(121, 15)
+        Me.PanelClientes.Name = "PanelClientes"
+        Me.PanelClientes.Size = New System.Drawing.Size(200, 100)
+        Me.PanelClientes.TabIndex = 8
         '
-        'Panel1
+        'PanelUsuarios
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Cyan
-        Me.Panel1.Location = New System.Drawing.Point(154, 15)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 100)
-        Me.Panel1.TabIndex = 7
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(613, 351)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.PanelUsuarios.BackColor = System.Drawing.Color.Cyan
+        Me.PanelUsuarios.Location = New System.Drawing.Point(154, 15)
+        Me.PanelUsuarios.Name = "PanelUsuarios"
+        Me.PanelUsuarios.Size = New System.Drawing.Size(200, 100)
+        Me.PanelUsuarios.TabIndex = 7
         '
         'Button1
         '
@@ -787,18 +776,18 @@ Partial Class Form1
         Me.VerUsuarios.Text = "Ver Usuarios"
         Me.VerUsuarios.UseVisualStyleBackColor = True
         '
-        'AdminDGVUsuario
+        'AdminDGV
         '
-        Me.AdminDGVUsuario.AllowUserToAddRows = False
-        Me.AdminDGVUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.AdminDGVUsuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        Me.AdminDGVUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.AdminDGVUsuario.ColumnHeadersVisible = False
-        Me.AdminDGVUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Imag})
-        Me.AdminDGVUsuario.Location = New System.Drawing.Point(154, 124)
-        Me.AdminDGVUsuario.Name = "AdminDGVUsuario"
-        Me.AdminDGVUsuario.Size = New System.Drawing.Size(715, 209)
-        Me.AdminDGVUsuario.TabIndex = 2
+        Me.AdminDGV.AllowUserToAddRows = False
+        Me.AdminDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.AdminDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
+        Me.AdminDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.AdminDGV.ColumnHeadersVisible = False
+        Me.AdminDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Imag})
+        Me.AdminDGV.Location = New System.Drawing.Point(154, 124)
+        Me.AdminDGV.Name = "AdminDGV"
+        Me.AdminDGV.Size = New System.Drawing.Size(715, 209)
+        Me.AdminDGV.TabIndex = 2
         '
         'Imag
         '
@@ -845,6 +834,85 @@ Partial Class Form1
         Me.PanelSupervisor.Name = "PanelSupervisor"
         Me.PanelSupervisor.Size = New System.Drawing.Size(1100, 582)
         Me.PanelSupervisor.TabIndex = 0
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.White
+        Me.Label18.Location = New System.Drawing.Point(431, 60)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(76, 24)
+        Me.Label18.TabIndex = 15
+        Me.Label18.Text = "Label18"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Black
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(114, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(12, 582)
+        Me.Panel5.TabIndex = 14
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.BSGestionCliente)
+        Me.Panel4.Controls.Add(Me.BSFacturas)
+        Me.Panel4.Controls.Add(Me.BSGestionProd)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(114, 582)
+        Me.Panel4.TabIndex = 13
+        '
+        'BSGestionCliente
+        '
+        Me.BSGestionCliente.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BSGestionCliente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BSGestionCliente.FlatAppearance.BorderSize = 0
+        Me.BSGestionCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSGestionCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BSGestionCliente.ForeColor = System.Drawing.Color.White
+        Me.BSGestionCliente.Location = New System.Drawing.Point(1, 85)
+        Me.BSGestionCliente.Name = "BSGestionCliente"
+        Me.BSGestionCliente.Size = New System.Drawing.Size(113, 33)
+        Me.BSGestionCliente.TabIndex = 5
+        Me.BSGestionCliente.Text = "Gestion Cliente"
+        Me.BSGestionCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSGestionCliente.UseVisualStyleBackColor = False
+        '
+        'BSFacturas
+        '
+        Me.BSFacturas.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BSFacturas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BSFacturas.FlatAppearance.BorderSize = 0
+        Me.BSFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BSFacturas.ForeColor = System.Drawing.Color.White
+        Me.BSFacturas.Location = New System.Drawing.Point(1, 169)
+        Me.BSFacturas.Name = "BSFacturas"
+        Me.BSFacturas.Size = New System.Drawing.Size(113, 33)
+        Me.BSFacturas.TabIndex = 4
+        Me.BSFacturas.Text = "Ventas"
+        Me.BSFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSFacturas.UseVisualStyleBackColor = False
+        '
+        'BSGestionProd
+        '
+        Me.BSGestionProd.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BSGestionProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BSGestionProd.FlatAppearance.BorderSize = 0
+        Me.BSGestionProd.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSGestionProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BSGestionProd.ForeColor = System.Drawing.Color.White
+        Me.BSGestionProd.Location = New System.Drawing.Point(1, 127)
+        Me.BSGestionProd.Name = "BSGestionProd"
+        Me.BSGestionProd.Size = New System.Drawing.Size(113, 33)
+        Me.BSGestionProd.TabIndex = 6
+        Me.BSGestionProd.Text = "Gestion Productos"
+        Me.BSGestionProd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSGestionProd.UseVisualStyleBackColor = False
         '
         'PanelSModifCliente
         '
@@ -1169,54 +1237,6 @@ Partial Class Form1
         Me.Imagenes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.Imagenes.Width = 88
         '
-        'BSFacturas
-        '
-        Me.BSFacturas.BackColor = System.Drawing.Color.DodgerBlue
-        Me.BSFacturas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BSFacturas.FlatAppearance.BorderSize = 0
-        Me.BSFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
-        Me.BSFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BSFacturas.ForeColor = System.Drawing.Color.White
-        Me.BSFacturas.Location = New System.Drawing.Point(1, 169)
-        Me.BSFacturas.Name = "BSFacturas"
-        Me.BSFacturas.Size = New System.Drawing.Size(113, 33)
-        Me.BSFacturas.TabIndex = 4
-        Me.BSFacturas.Text = "Ventas"
-        Me.BSFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BSFacturas.UseVisualStyleBackColor = False
-        '
-        'BSGestionProd
-        '
-        Me.BSGestionProd.BackColor = System.Drawing.Color.DodgerBlue
-        Me.BSGestionProd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BSGestionProd.FlatAppearance.BorderSize = 0
-        Me.BSGestionProd.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
-        Me.BSGestionProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BSGestionProd.ForeColor = System.Drawing.Color.White
-        Me.BSGestionProd.Location = New System.Drawing.Point(1, 127)
-        Me.BSGestionProd.Name = "BSGestionProd"
-        Me.BSGestionProd.Size = New System.Drawing.Size(113, 33)
-        Me.BSGestionProd.TabIndex = 6
-        Me.BSGestionProd.Text = "Gestion Productos"
-        Me.BSGestionProd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BSGestionProd.UseVisualStyleBackColor = False
-        '
-        'BSGestionCliente
-        '
-        Me.BSGestionCliente.BackColor = System.Drawing.Color.DodgerBlue
-        Me.BSGestionCliente.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BSGestionCliente.FlatAppearance.BorderSize = 0
-        Me.BSGestionCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
-        Me.BSGestionCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BSGestionCliente.ForeColor = System.Drawing.Color.White
-        Me.BSGestionCliente.Location = New System.Drawing.Point(1, 85)
-        Me.BSGestionCliente.Name = "BSGestionCliente"
-        Me.BSGestionCliente.Size = New System.Drawing.Size(113, 33)
-        Me.BSGestionCliente.TabIndex = 5
-        Me.BSGestionCliente.Text = "Gestion Cliente"
-        Me.BSGestionCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BSGestionCliente.UseVisualStyleBackColor = False
-        '
         'BCerrarSuper
         '
         Me.BCerrarSuper.Location = New System.Drawing.Point(878, 47)
@@ -1237,45 +1257,14 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
-        'Panel4
-        '
-        Me.Panel4.Controls.Add(Me.BSGestionCliente)
-        Me.Panel4.Controls.Add(Me.BSFacturas)
-        Me.Panel4.Controls.Add(Me.BSGestionProd)
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(114, 582)
-        Me.Panel4.TabIndex = 13
-        '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.Color.Black
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(114, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(12, 582)
-        Me.Panel5.TabIndex = 14
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(431, 60)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(76, 24)
-        Me.Label18.TabIndex = 15
-        Me.Label18.Text = "Label18"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(974, 582)
+        Me.Controls.Add(Me.PanelAdmin)
         Me.Controls.Add(Me.PanelSupervisor)
         Me.Controls.Add(Me.PanelVendedor)
-        Me.Controls.Add(Me.PanelAdmin)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
@@ -1295,9 +1284,10 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAdmin.ResumeLayout(False)
         Me.PanelAdmin.PerformLayout()
-        CType(Me.AdminDGVUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSupervisor.ResumeLayout(False)
         Me.PanelSupervisor.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
         Me.PanelSModifCliente.ResumeLayout(False)
         Me.PanelSModifCliente.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -1305,7 +1295,6 @@ Partial Class Form1
         Me.PanelBotones1.ResumeLayout(False)
         Me.PanelBotones2.ResumeLayout(False)
         CType(Me.DGVSupervisor, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1359,15 +1348,14 @@ Partial Class Form1
     Friend WithEvents BVerTodoProd As System.Windows.Forms.Button
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents DGVProdAgre As System.Windows.Forms.DataGridView
-    Friend WithEvents AdminDGVUsuario As System.Windows.Forms.DataGridView
+    Friend WithEvents AdminDGV As System.Windows.Forms.DataGridView
     Friend WithEvents VerUsuarios As System.Windows.Forms.Button
     Friend WithEvents ver As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Imag As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents PanelClientes As System.Windows.Forms.Panel
+    Friend WithEvents PanelUsuarios As System.Windows.Forms.Panel
+    Friend WithEvents PanelPro As System.Windows.Forms.Panel
     Friend WithEvents CBProductos As System.Windows.Forms.ComboBox
     Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents Imagen As System.Windows.Forms.DataGridViewImageColumn

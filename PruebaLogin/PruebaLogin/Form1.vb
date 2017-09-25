@@ -35,9 +35,9 @@
                     PanelAdmin.Visible = True
                     PanelVendedor.Visible = False
                     PanelSupervisor.Visible = False
-                    Panel1.Visible = False
-                    Panel2.Visible = False
-                    Panel3.Visible = False
+                    PanelUsuarios.Visible = False
+                    PanelClientes.Visible = False
+                    PanelPro.Visible = False
 
                 Else
 
@@ -402,7 +402,7 @@
 
 #Region "Administrador"
 
-    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles AdminDGVUsuario.CellContentClick
+    Private Sub DataGridView2_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles AdminDGV.CellContentClick
 
 
 
@@ -411,44 +411,44 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
-        Panel3.Visible = False
-        Panel2.Visible = False
-        Panel1.Visible = True
-        AdminDGVUsuario.ColumnHeadersVisible = True
-        AdminDGVUsuario.Columns("Imag").Visible = False
+        PanelPro.Visible = False
+        PanelClientes.Visible = False
+        PanelUsuarios.Visible = True
+        AdminDGV.ColumnHeadersVisible = True
+        AdminDGV.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
 
-        usuario.mostrarUsuarios(AdminDGVUsuario)
+        usuario.mostrarUsuarios(AdminDGV)
 
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
-        Panel2.Visible = True
-        Panel1.Visible = False
-        Panel3.Visible = False
-        AdminDGVUsuario.ColumnHeadersVisible = True
-        AdminDGVUsuario.Columns("Imag").Visible = False
+        PanelClientes.Visible = True
+        PanelUsuarios.Visible = False
+        PanelPro.Visible = False
+        AdminDGV.ColumnHeadersVisible = True
+        AdminDGV.Columns("Imag").Visible = False
         Dim cliente As New C_Cliente
 
-        cliente.mostrarClientes(AdminDGVUsuario)
+        cliente.mostrarClientes(AdminDGV)
 
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Panel2.Visible = False
-        Panel1.Visible = False
-        Panel3.Visible = True
-        AdminDGVUsuario.Columns("Imag").Visible = True
+        PanelClientes.Visible = False
+        PanelUsuarios.Visible = False
+        PanelPro.Visible = True
+        AdminDGV.Columns("Imag").Visible = True
         Dim producto As New C_Producto
         producto.TraerDatos()
 
         Dim img As Image
 
 
-        producto.mostrarProductos(AdminDGVUsuario)
-        For Each fila As DataGridViewRow In AdminDGVUsuario.Rows
-            AdminDGVUsuario.ColumnHeadersVisible = True
-            AdminDGVUsuario.Columns("Ruta").Visible = False
+        producto.mostrarProductos(AdminDGV)
+        For Each fila As DataGridViewRow In AdminDGV.Rows
+            AdminDGV.ColumnHeadersVisible = True
+            AdminDGV.Columns("Ruta").Visible = False
 
             If producto.VerificarP(fila.Cells("Ruta").Value) Then
 
