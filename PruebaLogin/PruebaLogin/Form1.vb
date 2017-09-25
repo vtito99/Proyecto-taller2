@@ -39,6 +39,11 @@
                     PanelUsuarios.Visible = False
                     PanelCliente.Visible = False
                     PanelPro.Visible = False
+                    PanelAdmBotones1.Visible = False
+                    PanelAProducto.Visible = False
+                    PanelAUsuarios.Visible = False
+                    BAVolver.Visible = False
+                    Label19.Visible = False
 
                 Else
 
@@ -166,6 +171,8 @@
         PanelMostrar.Visible = False
         PanelProduc.Visible = False
         TBDni.Clear()
+        GroupBox1.Enabled = False
+        BVerificar.Enabled = True
     End Sub
 #End Region
 
@@ -413,6 +420,12 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
+        Label19.Visible = True
+        Label19.Text = "GESTION USUARIOS"
+        PanelAdmBotones1.Visible = False
+        PanelAProducto.Visible = False
+        PanelAUsuarios.Visible = True
+        BAVolver.Visible = True
         PanelPro.Visible = False
         PanelCliente.Visible = False
         PanelUsuarios.Visible = True
@@ -426,6 +439,12 @@
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
+        Label19.Visible = True
+        Label19.Text = "GESTION CLIENTE"
+        PanelAdmBotones1.Visible = True
+        PanelAProducto.Visible = False
+        PanelAUsuarios.Visible = False
+        BAVolver.Visible = True
         PanelCliente.Visible = True
         PanelUsuarios.Visible = False
         PanelPro.Visible = False
@@ -438,6 +457,12 @@
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Label19.Visible = True
+        Label19.Text = "GESTION PRODUCTOS"
+        PanelAdmBotones1.Visible = False
+        PanelAProducto.Visible = True
+        PanelAUsuarios.Visible = False
+        BAVolver.Visible = True
         PanelCliente.Visible = False
         PanelUsuarios.Visible = False
         PanelPro.Visible = True
@@ -623,7 +648,7 @@
 
         End If
     End Sub
-    
+
     Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
 
 
@@ -632,5 +657,17 @@
         usuario.mostrarPorTipo(AdminDGV, item)
 
 
+    End Sub
+
+    Private Sub BAVolver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BAVolver.Click
+        Label19.Visible = False
+        'AdminDGV.Visible = False
+        PanelAdmBotones1.Visible = False
+        PanelAProducto.Visible = False
+        PanelAUsuarios.Visible = False
+        BAVolver.Visible = False
+        PanelUsuarios.Visible = False
+        PanelCliente.Visible = False
+        AdminDGV.DataSource = Nothing
     End Sub
 End Class
