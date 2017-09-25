@@ -4,9 +4,7 @@
 
 #Region "Acceso a Paneles de Usuarios"
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        Me.HorizontalScroll.Visible = False
-        Me.HorizontalScroll.Enabled = False
+       
         Me.AutoScroll = True
 
         Dim usuario As New C_Usuario(Login.TBUsuario.Text, Login.TBContraseña.Text)
@@ -194,7 +192,7 @@
             If cliente.Verificar(cliente.getDni) Then
 
                 MsgBox("El Cliente ya se encuentra registrado", 0 + 0 + 16, "Error")
-                TBPDni.Clear()
+                'TBPDni.Clear()
 
             Else
                 repuesta = MsgBox("El Cliente no se encuentra registrado. ¿Desea registrarlo?", 4 + 256 + 48, "Información")
@@ -526,4 +524,14 @@
 
         End If
     End Sub
+
+    Private Sub PanelVendedor_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PanelVendedor.Paint
+        Me.VerticalScroll.Visible = True
+        Me.VerticalScroll.Enabled = True
+        Me.HorizontalScroll.Visible = False
+        Me.HorizontalScroll.Enabled = False
+        Me.AutoScroll = True
+    End Sub
+
+   
 End Class

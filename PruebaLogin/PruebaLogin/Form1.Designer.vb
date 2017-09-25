@@ -22,8 +22,8 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PanelVendedor = New System.Windows.Forms.Panel()
         Me.PanelProduc = New System.Windows.Forms.Panel()
         Me.CBProductos = New System.Windows.Forms.ComboBox()
@@ -86,7 +86,6 @@ Partial Class Form1
         Me.PanelPro = New System.Windows.Forms.Panel()
         Me.PanelUsuarios = New System.Windows.Forms.Panel()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ver = New System.Windows.Forms.Button()
         Me.VerUsuarios = New System.Windows.Forms.Button()
@@ -101,6 +100,8 @@ Partial Class Form1
         Me.BSVerCliente = New System.Windows.Forms.Button()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,10 +116,12 @@ Partial Class Form1
         Me.PanelUsuarios.SuspendLayout()
         CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSupervisor.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelVendedor
         '
+        Me.PanelVendedor.AutoScroll = True
         Me.PanelVendedor.BackColor = System.Drawing.Color.SteelBlue
         Me.PanelVendedor.Controls.Add(Me.PanelProduc)
         Me.PanelVendedor.Controls.Add(Me.PanelAgregar)
@@ -151,7 +154,7 @@ Partial Class Form1
         Me.PanelProduc.Controls.Add(Me.DGVProd)
         Me.PanelProduc.Location = New System.Drawing.Point(117, 17)
         Me.PanelProduc.Name = "PanelProduc"
-        Me.PanelProduc.Size = New System.Drawing.Size(698, 750)
+        Me.PanelProduc.Size = New System.Drawing.Size(681, 750)
         Me.PanelProduc.TabIndex = 10
         '
         'CBProductos
@@ -185,20 +188,20 @@ Partial Class Form1
         Me.DGVProdAgre.MinimumSize = New System.Drawing.Size(0, 200)
         Me.DGVProdAgre.Name = "DGVProdAgre"
         Me.DGVProdAgre.RowTemplate.Height = 50
-        Me.DGVProdAgre.Size = New System.Drawing.Size(666, 243)
+        Me.DGVProdAgre.Size = New System.Drawing.Size(649, 243)
         Me.DGVProdAgre.TabIndex = 28
         '
         'Quitar
         '
         Me.Quitar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Quitar.DataPropertyName = "Quitar"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.WindowFrame
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        Me.Quitar.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.WindowFrame
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.Quitar.DefaultCellStyle = DataGridViewCellStyle1
         Me.Quitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Quitar.HeaderText = "Quitar"
         Me.Quitar.Name = "Quitar"
@@ -258,6 +261,7 @@ Partial Class Form1
         '
         'BVerTodoProd
         '
+        Me.BVerTodoProd.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BVerTodoProd.Location = New System.Drawing.Point(413, 125)
         Me.BVerTodoProd.Name = "BVerTodoProd"
         Me.BVerTodoProd.Size = New System.Drawing.Size(79, 40)
@@ -283,7 +287,7 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Location = New System.Drawing.Point(100, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(443, 89)
+        Me.GroupBox3.Size = New System.Drawing.Size(426, 89)
         Me.GroupBox3.TabIndex = 25
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Verificar Cliente"
@@ -291,7 +295,8 @@ Partial Class Form1
         'BPVerificar
         '
         Me.BPVerificar.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.BPVerificar.Location = New System.Drawing.Point(286, 26)
+        Me.BPVerificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BPVerificar.Location = New System.Drawing.Point(278, 26)
         Me.BPVerificar.Name = "BPVerificar"
         Me.BPVerificar.Size = New System.Drawing.Size(93, 34)
         Me.BPVerificar.TabIndex = 19
@@ -301,7 +306,7 @@ Partial Class Form1
         'TBPDni
         '
         Me.TBPDni.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.TBPDni.Location = New System.Drawing.Point(98, 33)
+        Me.TBPDni.Location = New System.Drawing.Point(90, 33)
         Me.TBPDni.Name = "TBPDni"
         Me.TBPDni.Size = New System.Drawing.Size(154, 20)
         Me.TBPDni.TabIndex = 17
@@ -310,7 +315,7 @@ Partial Class Form1
         '
         Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(63, 36)
+        Me.Label15.Location = New System.Drawing.Point(55, 36)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(26, 13)
         Me.Label15.TabIndex = 18
@@ -338,6 +343,7 @@ Partial Class Form1
         '
         Me.BBuscarProduc.BackColor = System.Drawing.Color.Transparent
         Me.BBuscarProduc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BBuscarProduc.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BBuscarProduc.Image = Global.PruebaLogin.My.Resources.Resources.lupa2
         Me.BBuscarProduc.Location = New System.Drawing.Point(362, 125)
         Me.BBuscarProduc.Name = "BBuscarProduc"
@@ -359,20 +365,20 @@ Partial Class Form1
         Me.DGVProd.MinimumSize = New System.Drawing.Size(0, 200)
         Me.DGVProd.Name = "DGVProd"
         Me.DGVProd.RowTemplate.Height = 50
-        Me.DGVProd.Size = New System.Drawing.Size(666, 243)
+        Me.DGVProd.Size = New System.Drawing.Size(649, 243)
         Me.DGVProd.TabIndex = 20
         '
         'Agregar
         '
         Me.Agregar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Agregar.DataPropertyName = "Agregar"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.WindowFrame
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.WindowFrame
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        Me.Agregar.DefaultCellStyle = DataGridViewCellStyle2
         Me.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Agregar.HeaderText = "Agregar"
         Me.Agregar.Name = "Agregar"
@@ -400,7 +406,7 @@ Partial Class Form1
         Me.PanelAgregar.Controls.Add(Me.ShapeContainer1)
         Me.PanelAgregar.Location = New System.Drawing.Point(117, 83)
         Me.PanelAgregar.Name = "PanelAgregar"
-        Me.PanelAgregar.Size = New System.Drawing.Size(698, 374)
+        Me.PanelAgregar.Size = New System.Drawing.Size(682, 374)
         Me.PanelAgregar.TabIndex = 5
         '
         'BVolver1
@@ -572,7 +578,7 @@ Partial Class Form1
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(698, 374)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(682, 374)
         Me.ShapeContainer1.TabIndex = 18
         Me.ShapeContainer1.TabStop = False
         '
@@ -593,7 +599,7 @@ Partial Class Form1
         Me.PanelMostrar.Controls.Add(Me.BMostrar1)
         Me.PanelMostrar.Location = New System.Drawing.Point(117, 83)
         Me.PanelMostrar.Name = "PanelMostrar"
-        Me.PanelMostrar.Size = New System.Drawing.Size(698, 374)
+        Me.PanelMostrar.Size = New System.Drawing.Size(682, 374)
         Me.PanelMostrar.TabIndex = 6
         '
         'DataGridView1
@@ -624,35 +630,58 @@ Partial Class Form1
         '
         'BPanelProduc
         '
-        Me.BPanelProduc.Location = New System.Drawing.Point(13, 129)
+        Me.BPanelProduc.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BPanelProduc.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BPanelProduc.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveBorder
+        Me.BPanelProduc.FlatAppearance.BorderSize = 0
+        Me.BPanelProduc.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BPanelProduc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BPanelProduc.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BPanelProduc.Location = New System.Drawing.Point(0, 129)
         Me.BPanelProduc.Name = "BPanelProduc"
-        Me.BPanelProduc.Size = New System.Drawing.Size(95, 33)
+        Me.BPanelProduc.Size = New System.Drawing.Size(114, 33)
         Me.BPanelProduc.TabIndex = 9
         Me.BPanelProduc.Text = "Ver Productos"
-        Me.BPanelProduc.UseVisualStyleBackColor = True
+        Me.BPanelProduc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BPanelProduc.UseVisualStyleBackColor = False
         '
         'BRegistrarC
         '
-        Me.BRegistrarC.Location = New System.Drawing.Point(12, 90)
+        Me.BRegistrarC.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BRegistrarC.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BRegistrarC.FlatAppearance.BorderSize = 0
+        Me.BRegistrarC.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BRegistrarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BRegistrarC.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BRegistrarC.Location = New System.Drawing.Point(0, 90)
         Me.BRegistrarC.Name = "BRegistrarC"
-        Me.BRegistrarC.Size = New System.Drawing.Size(96, 33)
+        Me.BRegistrarC.Size = New System.Drawing.Size(114, 33)
         Me.BRegistrarC.TabIndex = 7
         Me.BRegistrarC.Text = "Registrar"
-        Me.BRegistrarC.UseVisualStyleBackColor = True
+        Me.BRegistrarC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BRegistrarC.UseVisualStyleBackColor = False
         '
         'BListaC
         '
-        Me.BListaC.Location = New System.Drawing.Point(13, 51)
+        Me.BListaC.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BListaC.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BListaC.FlatAppearance.BorderSize = 0
+        Me.BListaC.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BListaC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BListaC.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.BListaC.Location = New System.Drawing.Point(0, 51)
         Me.BListaC.Name = "BListaC"
-        Me.BListaC.Size = New System.Drawing.Size(95, 33)
+        Me.BListaC.Size = New System.Drawing.Size(114, 33)
         Me.BListaC.TabIndex = 2
         Me.BListaC.Text = "Lista de Clientes"
-        Me.BListaC.UseVisualStyleBackColor = True
+        Me.BListaC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BListaC.UseVisualStyleBackColor = False
         '
         'BCerrarVendedor
         '
         Me.BCerrarVendedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BCerrarVendedor.Location = New System.Drawing.Point(878, 50)
+        Me.BCerrarVendedor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarVendedor.Location = New System.Drawing.Point(861, 50)
         Me.BCerrarVendedor.Name = "BCerrarVendedor"
         Me.BCerrarVendedor.Size = New System.Drawing.Size(63, 35)
         Me.BCerrarVendedor.TabIndex = 1
@@ -664,7 +693,7 @@ Partial Class Form1
         Me.LabelVendedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelVendedor.AutoSize = True
         Me.LabelVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelVendedor.Location = New System.Drawing.Point(818, 17)
+        Me.LabelVendedor.Location = New System.Drawing.Point(801, 17)
         Me.LabelVendedor.Name = "LabelVendedor"
         Me.LabelVendedor.Size = New System.Drawing.Size(39, 13)
         Me.LabelVendedor.TabIndex = 0
@@ -673,13 +702,11 @@ Partial Class Form1
         'PanelAdmin
         '
         Me.PanelAdmin.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelAdmin.Controls.Add(Me.Panel2)
+        Me.PanelAdmin.Controls.Add(Me.Panel1)
         Me.PanelAdmin.Controls.Add(Me.PanelClientes)
         Me.PanelAdmin.Controls.Add(Me.PanelPro)
         Me.PanelAdmin.Controls.Add(Me.PanelUsuarios)
-        Me.PanelAdmin.Controls.Add(Me.Button2)
-        Me.PanelAdmin.Controls.Add(Me.Button1)
-        Me.PanelAdmin.Controls.Add(Me.ver)
-        Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
         Me.PanelAdmin.Controls.Add(Me.AdminDGV)
         Me.PanelAdmin.Controls.Add(Me.LabelAdmin)
         Me.PanelAdmin.Controls.Add(Me.BCerrarAdmin)
@@ -694,9 +721,9 @@ Partial Class Form1
         Me.PanelClientes.BackColor = System.Drawing.Color.Transparent
         Me.PanelClientes.Controls.Add(Me.LabelDniCliente)
         Me.PanelClientes.Controls.Add(Me.TBDniCliente)
-        Me.PanelClientes.Location = New System.Drawing.Point(138, 51)
+        Me.PanelClientes.Location = New System.Drawing.Point(154, 51)
         Me.PanelClientes.Name = "PanelClientes"
-        Me.PanelClientes.Size = New System.Drawing.Size(572, 64)
+        Me.PanelClientes.Size = New System.Drawing.Size(556, 64)
         Me.PanelClientes.TabIndex = 8
         '
         'LabelDniCliente
@@ -717,10 +744,10 @@ Partial Class Form1
         '
         'PanelPro
         '
-        Me.PanelPro.BackColor = System.Drawing.Color.DarkOrange
-        Me.PanelPro.Location = New System.Drawing.Point(135, 35)
+        Me.PanelPro.BackColor = System.Drawing.Color.Transparent
+        Me.PanelPro.Location = New System.Drawing.Point(154, 35)
         Me.PanelPro.Name = "PanelPro"
-        Me.PanelPro.Size = New System.Drawing.Size(436, 80)
+        Me.PanelPro.Size = New System.Drawing.Size(417, 80)
         Me.PanelPro.TabIndex = 9
         '
         'PanelUsuarios
@@ -741,42 +768,50 @@ Partial Class Form1
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 0
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(11, 263)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(91, 23)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(9, 219)
+        Me.Button1.BackColor = System.Drawing.Color.DodgerBlue
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Button1.Location = New System.Drawing.Point(3, 142)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(93, 23)
+        Me.Button1.Size = New System.Drawing.Size(108, 28)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "Ver Productos"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'ver
         '
-        Me.ver.Location = New System.Drawing.Point(12, 180)
+        Me.ver.BackColor = System.Drawing.Color.DodgerBlue
+        Me.ver.FlatAppearance.BorderSize = 0
+        Me.ver.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ver.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.ver.Location = New System.Drawing.Point(3, 98)
         Me.ver.Name = "ver"
-        Me.ver.Size = New System.Drawing.Size(75, 23)
+        Me.ver.Size = New System.Drawing.Size(108, 29)
         Me.ver.TabIndex = 4
         Me.ver.Text = "Ver Clientes"
-        Me.ver.UseVisualStyleBackColor = True
+        Me.ver.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ver.UseVisualStyleBackColor = False
         '
         'VerUsuarios
         '
-        Me.VerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.VerUsuarios.Location = New System.Drawing.Point(9, 139)
+        Me.VerUsuarios.BackColor = System.Drawing.Color.DodgerBlue
+        Me.VerUsuarios.FlatAppearance.BorderSize = 0
+        Me.VerUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.VerUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.VerUsuarios.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.VerUsuarios.Location = New System.Drawing.Point(3, 54)
         Me.VerUsuarios.Name = "VerUsuarios"
-        Me.VerUsuarios.Size = New System.Drawing.Size(99, 23)
+        Me.VerUsuarios.Size = New System.Drawing.Size(108, 33)
         Me.VerUsuarios.TabIndex = 3
         Me.VerUsuarios.Text = "Ver Usuarios"
-        Me.VerUsuarios.UseVisualStyleBackColor = True
+        Me.VerUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.VerUsuarios.UseVisualStyleBackColor = False
         '
         'AdminDGV
         '
@@ -893,13 +928,34 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.VerUsuarios)
+        Me.Panel1.Controls.Add(Me.ver)
+        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(114, 582)
+        Me.Panel1.TabIndex = 10
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Black
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(114, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(12, 582)
+        Me.Panel2.TabIndex = 11
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(974, 582)
-        Me.Controls.Add(Me.PanelVendedor)
         Me.Controls.Add(Me.PanelAdmin)
+        Me.Controls.Add(Me.PanelVendedor)
         Me.Controls.Add(Me.PanelSupervisor)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -926,6 +982,7 @@ Partial Class Form1
         CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSupervisor.ResumeLayout(False)
         Me.PanelSupervisor.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -983,7 +1040,6 @@ Partial Class Form1
     Friend WithEvents VerUsuarios As System.Windows.Forms.Button
     Friend WithEvents ver As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Imag As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents PanelClientes As System.Windows.Forms.Panel
     Friend WithEvents PanelUsuarios As System.Windows.Forms.Panel
@@ -1006,4 +1062,6 @@ Partial Class Form1
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents TBDniCliente As System.Windows.Forms.TextBox
     Friend WithEvents LabelDniCliente As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
