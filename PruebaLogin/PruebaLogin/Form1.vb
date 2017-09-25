@@ -1,6 +1,9 @@
 ﻿Public Class Form1
     Dim db As New dbPruebaBoschEntities
     Dim cliente As New C_Cliente
+    Dim usuario As New C_Usuario
+
+
 
 #Region "Acceso a Paneles de Usuarios"
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -417,6 +420,7 @@
         AdminDGV.Columns("Imag").Visible = False
         Dim usuario As New C_Usuario
 
+        ComboBox1.SelectedIndex = 0
         usuario.mostrarUsuarios(AdminDGV)
 
     End Sub
@@ -610,7 +614,23 @@
     End Sub
 #End Region
 
-   
-    
+    Private Sub TBNombreCliente_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBDniCliente.KeyPress
+        If e.KeyChar = Chr(13) Then
 
+            Dim dni As Integer
+            dni = TBDniCliente.Text
+            cliente.mostrarPorDni(AdminDGV, dni)
+
+        End If
+    End Sub
+    
+    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+
+        Dim item = ComboBox1.SelectedItem.ToString
+
+        usuario.mostrarPorTipo(AdminDGV, item)
+
+
+    End Sub
 End Class
