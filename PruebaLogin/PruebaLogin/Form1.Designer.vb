@@ -82,9 +82,12 @@ Partial Class Form1
         Me.PanelAdmin = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PanelPro = New System.Windows.Forms.Panel()
-        Me.PanelClientes = New System.Windows.Forms.Panel()
         Me.PanelUsuarios = New System.Windows.Forms.Panel()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.PanelCliente = New System.Windows.Forms.Panel()
+        Me.TBDniCliente = New System.Windows.Forms.TextBox()
+        Me.LabelDniCliente = New System.Windows.Forms.Label()
+        Me.PanelPro = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ver = New System.Windows.Forms.Button()
         Me.VerUsuarios = New System.Windows.Forms.Button()
@@ -135,9 +138,6 @@ Partial Class Form1
         Me.Imagenes = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
-        Me.LabelDniCliente = New System.Windows.Forms.Label()
-        Me.TBDniCliente = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,8 +148,8 @@ Partial Class Form1
         Me.PanelMostrar.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAdmin.SuspendLayout()
-        Me.PanelClientes.SuspendLayout()
         Me.PanelUsuarios.SuspendLayout()
+        Me.PanelCliente.SuspendLayout()
         CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSupervisor.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -746,7 +746,7 @@ Partial Class Form1
         Me.PanelAdmin.Controls.Add(Me.Panel2)
         Me.PanelAdmin.Controls.Add(Me.Panel1)
         Me.PanelAdmin.Controls.Add(Me.PanelUsuarios)
-        Me.PanelAdmin.Controls.Add(Me.PanelClientes)
+        Me.PanelAdmin.Controls.Add(Me.PanelCliente)
         Me.PanelAdmin.Controls.Add(Me.PanelPro)
         Me.PanelAdmin.Controls.Add(Me.Button1)
         Me.PanelAdmin.Controls.Add(Me.ver)
@@ -774,24 +774,6 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(77, 80)
         Me.Panel1.TabIndex = 10
         '
-        'PanelPro
-        '
-        Me.PanelPro.BackColor = System.Drawing.Color.DarkOrange
-        Me.PanelPro.Location = New System.Drawing.Point(90, 15)
-        Me.PanelPro.Name = "PanelPro"
-        Me.PanelPro.Size = New System.Drawing.Size(200, 100)
-        Me.PanelPro.TabIndex = 9
-        '
-        'PanelClientes
-        '
-        Me.PanelClientes.BackColor = System.Drawing.Color.Lime
-        Me.PanelClientes.Controls.Add(Me.TBDniCliente)
-        Me.PanelClientes.Controls.Add(Me.LabelDniCliente)
-        Me.PanelClientes.Location = New System.Drawing.Point(121, 15)
-        Me.PanelClientes.Name = "PanelClientes"
-        Me.PanelClientes.Size = New System.Drawing.Size(200, 100)
-        Me.PanelClientes.TabIndex = 8
-        '
         'PanelUsuarios
         '
         Me.PanelUsuarios.BackColor = System.Drawing.Color.Cyan
@@ -800,6 +782,49 @@ Partial Class Form1
         Me.PanelUsuarios.Name = "PanelUsuarios"
         Me.PanelUsuarios.Size = New System.Drawing.Size(200, 100)
         Me.PanelUsuarios.TabIndex = 7
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"", "Admin", "Vendedor", "Supervisor"})
+        Me.ComboBox1.Location = New System.Drawing.Point(63, 45)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 0
+        '
+        'PanelCliente
+        '
+        Me.PanelCliente.BackColor = System.Drawing.Color.Lime
+        Me.PanelCliente.Controls.Add(Me.TBDniCliente)
+        Me.PanelCliente.Controls.Add(Me.LabelDniCliente)
+        Me.PanelCliente.Location = New System.Drawing.Point(121, 15)
+        Me.PanelCliente.Name = "PanelCliente"
+        Me.PanelCliente.Size = New System.Drawing.Size(200, 100)
+        Me.PanelCliente.TabIndex = 8
+        '
+        'TBDniCliente
+        '
+        Me.TBDniCliente.Location = New System.Drawing.Point(51, 40)
+        Me.TBDniCliente.Name = "TBDniCliente"
+        Me.TBDniCliente.Size = New System.Drawing.Size(100, 20)
+        Me.TBDniCliente.TabIndex = 1
+        '
+        'LabelDniCliente
+        '
+        Me.LabelDniCliente.AutoSize = True
+        Me.LabelDniCliente.Location = New System.Drawing.Point(18, 40)
+        Me.LabelDniCliente.Name = "LabelDniCliente"
+        Me.LabelDniCliente.Size = New System.Drawing.Size(26, 13)
+        Me.LabelDniCliente.TabIndex = 0
+        Me.LabelDniCliente.Text = "DNI"
+        '
+        'PanelPro
+        '
+        Me.PanelPro.BackColor = System.Drawing.Color.DarkOrange
+        Me.PanelPro.Location = New System.Drawing.Point(90, 15)
+        Me.PanelPro.Name = "PanelPro"
+        Me.PanelPro.Size = New System.Drawing.Size(200, 100)
+        Me.PanelPro.TabIndex = 9
         '
         'Button1
         '
@@ -1328,31 +1353,6 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
-        'LabelDniCliente
-        '
-        Me.LabelDniCliente.AutoSize = True
-        Me.LabelDniCliente.Location = New System.Drawing.Point(18, 40)
-        Me.LabelDniCliente.Name = "LabelDniCliente"
-        Me.LabelDniCliente.Size = New System.Drawing.Size(26, 13)
-        Me.LabelDniCliente.TabIndex = 0
-        Me.LabelDniCliente.Text = "DNI"
-        '
-        'TBDniCliente
-        '
-        Me.TBDniCliente.Location = New System.Drawing.Point(51, 40)
-        Me.TBDniCliente.Name = "TBDniCliente"
-        Me.TBDniCliente.Size = New System.Drawing.Size(100, 20)
-        Me.TBDniCliente.TabIndex = 1
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"", "Admin", "Vendedor", "Supervisor"})
-        Me.ComboBox1.Location = New System.Drawing.Point(63, 45)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 0
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1381,9 +1381,9 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAdmin.ResumeLayout(False)
         Me.PanelAdmin.PerformLayout()
-        Me.PanelClientes.ResumeLayout(False)
-        Me.PanelClientes.PerformLayout()
         Me.PanelUsuarios.ResumeLayout(False)
+        Me.PanelCliente.ResumeLayout(False)
+        Me.PanelCliente.PerformLayout()
         CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSupervisor.ResumeLayout(False)
         Me.PanelSupervisor.PerformLayout()
@@ -1453,7 +1453,7 @@ Partial Class Form1
     Friend WithEvents ver As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Imag As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents PanelClientes As System.Windows.Forms.Panel
+    Friend WithEvents PanelCliente As System.Windows.Forms.Panel
     Friend WithEvents PanelUsuarios As System.Windows.Forms.Panel
     Friend WithEvents PanelPro As System.Windows.Forms.Panel
     Friend WithEvents CBProductos As System.Windows.Forms.ComboBox

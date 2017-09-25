@@ -34,7 +34,7 @@
                     PanelVendedor.Visible = False
                     PanelSupervisor.Visible = False
                     PanelUsuarios.Visible = False
-                    PanelClientes.Visible = False
+                    PanelCliente.Visible = False
                     PanelPro.Visible = False
 
                 Else
@@ -411,7 +411,7 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles VerUsuarios.Click
         PanelPro.Visible = False
-        PanelClientes.Visible = False
+        PanelCliente.Visible = False
         PanelUsuarios.Visible = True
         AdminDGV.ColumnHeadersVisible = True
         AdminDGV.Columns("Imag").Visible = False
@@ -422,7 +422,7 @@
     End Sub
 
     Private Sub ver_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ver.Click
-        PanelClientes.Visible = True
+        PanelCliente.Visible = True
         PanelUsuarios.Visible = False
         PanelPro.Visible = False
         AdminDGV.ColumnHeadersVisible = True
@@ -434,7 +434,7 @@
     End Sub
 
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        PanelClientes.Visible = False
+        PanelCliente.Visible = False
         PanelUsuarios.Visible = False
         PanelPro.Visible = True
         AdminDGV.Columns("Imag").Visible = True
