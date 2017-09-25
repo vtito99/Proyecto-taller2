@@ -80,12 +80,9 @@ Partial Class Form1
         Me.BCerrarVendedor = New System.Windows.Forms.Button()
         Me.LabelVendedor = New System.Windows.Forms.Label()
         Me.PanelAdmin = New System.Windows.Forms.Panel()
-        Me.PanelClientes = New System.Windows.Forms.Panel()
-        Me.LabelDniCliente = New System.Windows.Forms.Label()
-        Me.TBDniCliente = New System.Windows.Forms.TextBox()
         Me.PanelPro = New System.Windows.Forms.Panel()
+        Me.PanelClientes = New System.Windows.Forms.Panel()
         Me.PanelUsuarios = New System.Windows.Forms.Panel()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.ver = New System.Windows.Forms.Button()
         Me.VerUsuarios = New System.Windows.Forms.Button()
@@ -94,10 +91,46 @@ Partial Class Form1
         Me.LabelAdmin = New System.Windows.Forms.Label()
         Me.BCerrarAdmin = New System.Windows.Forms.Button()
         Me.PanelSupervisor = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BSGestionCliente = New System.Windows.Forms.Button()
         Me.BSFacturas = New System.Windows.Forms.Button()
-        Me.BSVerProd = New System.Windows.Forms.Button()
+        Me.BSGestionProd = New System.Windows.Forms.Button()
+        Me.PanelSModifCliente = New System.Windows.Forms.Panel()
+        Me.BSCancelarAltaCli = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.DTPSNacCliente = New System.Windows.Forms.DateTimePicker()
+        Me.TBSNomCliente = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.BSModificarC = New System.Windows.Forms.Button()
+        Me.TBSCorreoCliente = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TBSTelCliente = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TBSDirCliente = New System.Windows.Forms.TextBox()
+        Me.TBSApeCliente = New System.Windows.Forms.TextBox()
+        Me.BSVerificarClente = New System.Windows.Forms.Button()
+        Me.TBSDni = New System.Windows.Forms.TextBox()
+        Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
+        Me.PanelBotones1 = New System.Windows.Forms.Panel()
+        Me.BSModifCliente = New System.Windows.Forms.Button()
+        Me.BSBajaCliente = New System.Windows.Forms.Button()
+        Me.BSAltaCliente = New System.Windows.Forms.Button()
         Me.BSVerCliente = New System.Windows.Forms.Button()
+        Me.PanelBotones2 = New System.Windows.Forms.Panel()
+        Me.BSModifProd = New System.Windows.Forms.Button()
+        Me.BSBajaProd = New System.Windows.Forms.Button()
+        Me.BSAltaProd = New System.Windows.Forms.Button()
+        Me.BSVerProd = New System.Windows.Forms.Button()
+        Me.BSVolver = New System.Windows.Forms.Button()
+        Me.DGVSupervisor = New System.Windows.Forms.DataGridView()
+        Me.Imagenes = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -112,11 +145,14 @@ Partial Class Form1
         Me.PanelMostrar.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelAdmin.SuspendLayout()
-        Me.PanelClientes.SuspendLayout()
-        Me.PanelUsuarios.SuspendLayout()
         CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSupervisor.SuspendLayout()
-        Me.Panel1.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.PanelSModifCliente.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.PanelBotones1.SuspendLayout()
+        Me.PanelBotones2.SuspendLayout()
+        CType(Me.DGVSupervisor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelVendedor
@@ -704,9 +740,12 @@ Partial Class Form1
         Me.PanelAdmin.BackColor = System.Drawing.Color.SteelBlue
         Me.PanelAdmin.Controls.Add(Me.Panel2)
         Me.PanelAdmin.Controls.Add(Me.Panel1)
-        Me.PanelAdmin.Controls.Add(Me.PanelClientes)
         Me.PanelAdmin.Controls.Add(Me.PanelPro)
+        Me.PanelAdmin.Controls.Add(Me.PanelClientes)
         Me.PanelAdmin.Controls.Add(Me.PanelUsuarios)
+        Me.PanelAdmin.Controls.Add(Me.Button1)
+        Me.PanelAdmin.Controls.Add(Me.ver)
+        Me.PanelAdmin.Controls.Add(Me.VerUsuarios)
         Me.PanelAdmin.Controls.Add(Me.AdminDGV)
         Me.PanelAdmin.Controls.Add(Me.LabelAdmin)
         Me.PanelAdmin.Controls.Add(Me.BCerrarAdmin)
@@ -716,57 +755,29 @@ Partial Class Form1
         Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
         Me.PanelAdmin.TabIndex = 0
         '
-        'PanelClientes
-        '
-        Me.PanelClientes.BackColor = System.Drawing.Color.Transparent
-        Me.PanelClientes.Controls.Add(Me.LabelDniCliente)
-        Me.PanelClientes.Controls.Add(Me.TBDniCliente)
-        Me.PanelClientes.Location = New System.Drawing.Point(154, 51)
-        Me.PanelClientes.Name = "PanelClientes"
-        Me.PanelClientes.Size = New System.Drawing.Size(556, 64)
-        Me.PanelClientes.TabIndex = 8
-        '
-        'LabelDniCliente
-        '
-        Me.LabelDniCliente.AutoSize = True
-        Me.LabelDniCliente.Location = New System.Drawing.Point(145, 35)
-        Me.LabelDniCliente.Name = "LabelDniCliente"
-        Me.LabelDniCliente.Size = New System.Drawing.Size(26, 13)
-        Me.LabelDniCliente.TabIndex = 1
-        Me.LabelDniCliente.Text = "DNI"
-        '
-        'TBDniCliente
-        '
-        Me.TBDniCliente.Location = New System.Drawing.Point(208, 30)
-        Me.TBDniCliente.Name = "TBDniCliente"
-        Me.TBDniCliente.Size = New System.Drawing.Size(131, 20)
-        Me.TBDniCliente.TabIndex = 0
-        '
         'PanelPro
         '
-        Me.PanelPro.BackColor = System.Drawing.Color.Transparent
-        Me.PanelPro.Location = New System.Drawing.Point(154, 35)
+        Me.PanelPro.BackColor = System.Drawing.Color.DarkOrange
+        Me.PanelPro.Location = New System.Drawing.Point(90, 15)
         Me.PanelPro.Name = "PanelPro"
-        Me.PanelPro.Size = New System.Drawing.Size(417, 80)
+        Me.PanelPro.Size = New System.Drawing.Size(200, 100)
         Me.PanelPro.TabIndex = 9
+        '
+        'PanelClientes
+        '
+        Me.PanelClientes.BackColor = System.Drawing.Color.Lime
+        Me.PanelClientes.Location = New System.Drawing.Point(121, 15)
+        Me.PanelClientes.Name = "PanelClientes"
+        Me.PanelClientes.Size = New System.Drawing.Size(200, 100)
+        Me.PanelClientes.TabIndex = 8
         '
         'PanelUsuarios
         '
-        Me.PanelUsuarios.BackColor = System.Drawing.Color.Transparent
-        Me.PanelUsuarios.Controls.Add(Me.ComboBox1)
-        Me.PanelUsuarios.Location = New System.Drawing.Point(154, 81)
+        Me.PanelUsuarios.BackColor = System.Drawing.Color.Cyan
+        Me.PanelUsuarios.Location = New System.Drawing.Point(154, 15)
         Me.PanelUsuarios.Name = "PanelUsuarios"
-        Me.PanelUsuarios.Size = New System.Drawing.Size(644, 34)
+        Me.PanelUsuarios.Size = New System.Drawing.Size(200, 100)
         Me.PanelUsuarios.TabIndex = 7
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"", "Admin", "Vendedor", "Supervisor"})
-        Me.ComboBox1.Location = New System.Drawing.Point(233, 5)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 0
         '
         'Button1
         '
@@ -816,8 +827,6 @@ Partial Class Form1
         'AdminDGV
         '
         Me.AdminDGV.AllowUserToAddRows = False
-        Me.AdminDGV.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AdminDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.AdminDGV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.AdminDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -825,9 +834,7 @@ Partial Class Form1
         Me.AdminDGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Imag})
         Me.AdminDGV.Location = New System.Drawing.Point(154, 124)
         Me.AdminDGV.Name = "AdminDGV"
-        Me.AdminDGV.RowTemplate.Height = 41
-        Me.AdminDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.AdminDGV.Size = New System.Drawing.Size(715, 269)
+        Me.AdminDGV.Size = New System.Drawing.Size(715, 209)
         Me.AdminDGV.TabIndex = 2
         '
         'Imag
@@ -862,52 +869,422 @@ Partial Class Form1
         'PanelSupervisor
         '
         Me.PanelSupervisor.BackColor = System.Drawing.Color.SteelBlue
-        Me.PanelSupervisor.Controls.Add(Me.BSGestionCliente)
-        Me.PanelSupervisor.Controls.Add(Me.BSFacturas)
-        Me.PanelSupervisor.Controls.Add(Me.BSVerProd)
-        Me.PanelSupervisor.Controls.Add(Me.BSVerCliente)
+        Me.PanelSupervisor.Controls.Add(Me.Label18)
+        Me.PanelSupervisor.Controls.Add(Me.Panel5)
+        Me.PanelSupervisor.Controls.Add(Me.Panel4)
+        Me.PanelSupervisor.Controls.Add(Me.PanelSModifCliente)
+        Me.PanelSupervisor.Controls.Add(Me.PanelBotones1)
+        Me.PanelSupervisor.Controls.Add(Me.PanelBotones2)
+        Me.PanelSupervisor.Controls.Add(Me.BSVolver)
+        Me.PanelSupervisor.Controls.Add(Me.DGVSupervisor)
         Me.PanelSupervisor.Controls.Add(Me.BCerrarSuper)
         Me.PanelSupervisor.Controls.Add(Me.LabelSupervisor)
         Me.PanelSupervisor.Location = New System.Drawing.Point(0, 0)
         Me.PanelSupervisor.Name = "PanelSupervisor"
-        Me.PanelSupervisor.Size = New System.Drawing.Size(974, 582)
+        Me.PanelSupervisor.Size = New System.Drawing.Size(1100, 582)
         Me.PanelSupervisor.TabIndex = 0
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.White
+        Me.Label18.Location = New System.Drawing.Point(431, 60)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(76, 24)
+        Me.Label18.TabIndex = 15
+        Me.Label18.Text = "Label18"
+        '
+        'Panel5
+        '
+        Me.Panel5.BackColor = System.Drawing.Color.Black
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(114, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(12, 582)
+        Me.Panel5.TabIndex = 14
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.BSGestionCliente)
+        Me.Panel4.Controls.Add(Me.BSFacturas)
+        Me.Panel4.Controls.Add(Me.BSGestionProd)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel4.Location = New System.Drawing.Point(0, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(114, 582)
+        Me.Panel4.TabIndex = 13
         '
         'BSGestionCliente
         '
-        Me.BSGestionCliente.Location = New System.Drawing.Point(13, 224)
+        Me.BSGestionCliente.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BSGestionCliente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BSGestionCliente.FlatAppearance.BorderSize = 0
+        Me.BSGestionCliente.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSGestionCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BSGestionCliente.ForeColor = System.Drawing.Color.White
+        Me.BSGestionCliente.Location = New System.Drawing.Point(1, 85)
         Me.BSGestionCliente.Name = "BSGestionCliente"
-        Me.BSGestionCliente.Size = New System.Drawing.Size(95, 33)
+        Me.BSGestionCliente.Size = New System.Drawing.Size(113, 33)
         Me.BSGestionCliente.TabIndex = 5
-        Me.BSGestionCliente.Text = "Button6"
-        Me.BSGestionCliente.UseVisualStyleBackColor = True
+        Me.BSGestionCliente.Text = "Gestion Cliente"
+        Me.BSGestionCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSGestionCliente.UseVisualStyleBackColor = False
         '
         'BSFacturas
         '
-        Me.BSFacturas.Location = New System.Drawing.Point(13, 180)
+        Me.BSFacturas.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BSFacturas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BSFacturas.FlatAppearance.BorderSize = 0
+        Me.BSFacturas.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BSFacturas.ForeColor = System.Drawing.Color.White
+        Me.BSFacturas.Location = New System.Drawing.Point(1, 169)
         Me.BSFacturas.Name = "BSFacturas"
-        Me.BSFacturas.Size = New System.Drawing.Size(95, 33)
+        Me.BSFacturas.Size = New System.Drawing.Size(113, 33)
         Me.BSFacturas.TabIndex = 4
-        Me.BSFacturas.Text = "Facturas"
-        Me.BSFacturas.UseVisualStyleBackColor = True
+        Me.BSFacturas.Text = "Ventas"
+        Me.BSFacturas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSFacturas.UseVisualStyleBackColor = False
+        '
+        'BSGestionProd
+        '
+        Me.BSGestionProd.BackColor = System.Drawing.Color.DodgerBlue
+        Me.BSGestionProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BSGestionProd.FlatAppearance.BorderSize = 0
+        Me.BSGestionProd.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.WindowFrame
+        Me.BSGestionProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BSGestionProd.ForeColor = System.Drawing.Color.White
+        Me.BSGestionProd.Location = New System.Drawing.Point(1, 127)
+        Me.BSGestionProd.Name = "BSGestionProd"
+        Me.BSGestionProd.Size = New System.Drawing.Size(113, 33)
+        Me.BSGestionProd.TabIndex = 6
+        Me.BSGestionProd.Text = "Gestion Productos"
+        Me.BSGestionProd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BSGestionProd.UseVisualStyleBackColor = False
+        '
+        'PanelSModifCliente
+        '
+        Me.PanelSModifCliente.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PanelSModifCliente.Controls.Add(Me.BSCancelarAltaCli)
+        Me.PanelSModifCliente.Controls.Add(Me.Label8)
+        Me.PanelSModifCliente.Controls.Add(Me.GroupBox2)
+        Me.PanelSModifCliente.Controls.Add(Me.BSVerificarClente)
+        Me.PanelSModifCliente.Controls.Add(Me.TBSDni)
+        Me.PanelSModifCliente.Controls.Add(Me.ShapeContainer2)
+        Me.PanelSModifCliente.Location = New System.Drawing.Point(210, 95)
+        Me.PanelSModifCliente.Name = "PanelSModifCliente"
+        Me.PanelSModifCliente.Size = New System.Drawing.Size(698, 374)
+        Me.PanelSModifCliente.TabIndex = 12
+        '
+        'BSCancelarAltaCli
+        '
+        Me.BSCancelarAltaCli.Location = New System.Drawing.Point(509, 332)
+        Me.BSCancelarAltaCli.Name = "BSCancelarAltaCli"
+        Me.BSCancelarAltaCli.Size = New System.Drawing.Size(93, 33)
+        Me.BSCancelarAltaCli.TabIndex = 14
+        Me.BSCancelarAltaCli.Text = "Cancelar"
+        Me.BSCancelarAltaCli.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(149, 27)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(26, 13)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "DNI"
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.DTPSNacCliente)
+        Me.GroupBox2.Controls.Add(Me.TBSNomCliente)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.BSModificarC)
+        Me.GroupBox2.Controls.Add(Me.TBSCorreoCliente)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.TBSTelCliente)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.TBSDirCliente)
+        Me.GroupBox2.Controls.Add(Me.TBSApeCliente)
+        Me.GroupBox2.Enabled = False
+        Me.GroupBox2.Location = New System.Drawing.Point(87, 87)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(512, 235)
+        Me.GroupBox2.TabIndex = 17
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Modificar Cliente"
+        '
+        'DTPSNacCliente
+        '
+        Me.DTPSNacCliente.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DTPSNacCliente.Location = New System.Drawing.Point(129, 75)
+        Me.DTPSNacCliente.Name = "DTPSNacCliente"
+        Me.DTPSNacCliente.Size = New System.Drawing.Size(127, 20)
+        Me.DTPSNacCliente.TabIndex = 13
+        '
+        'TBSNomCliente
+        '
+        Me.TBSNomCliente.Location = New System.Drawing.Point(64, 30)
+        Me.TBSNomCliente.Name = "TBSNomCliente"
+        Me.TBSNomCliente.Size = New System.Drawing.Size(183, 20)
+        Me.TBSNomCliente.TabIndex = 2
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(17, 158)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(38, 13)
+        Me.Label9.TabIndex = 12
+        Me.Label9.Text = "Correo"
+        '
+        'BSModificarC
+        '
+        Me.BSModificarC.Location = New System.Drawing.Point(193, 189)
+        Me.BSModificarC.Name = "BSModificarC"
+        Me.BSModificarC.Size = New System.Drawing.Size(93, 34)
+        Me.BSModificarC.TabIndex = 0
+        Me.BSModificarC.Text = "Modificar"
+        Me.BSModificarC.UseVisualStyleBackColor = True
+        '
+        'TBSCorreoCliente
+        '
+        Me.TBSCorreoCliente.Location = New System.Drawing.Point(75, 155)
+        Me.TBSCorreoCliente.Name = "TBSCorreoCliente"
+        Me.TBSCorreoCliente.Size = New System.Drawing.Size(197, 20)
+        Me.TBSCorreoCliente.TabIndex = 7
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(17, 33)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(44, 13)
+        Me.Label10.TabIndex = 1
+        Me.Label10.Text = "Nombre"
+        '
+        'TBSTelCliente
+        '
+        Me.TBSTelCliente.Location = New System.Drawing.Point(326, 75)
+        Me.TBSTelCliente.Name = "TBSTelCliente"
+        Me.TBSTelCliente.Size = New System.Drawing.Size(134, 20)
+        Me.TBSTelCliente.TabIndex = 5
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(260, 33)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(44, 13)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "Apellido"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(17, 78)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(108, 13)
+        Me.Label12.TabIndex = 9
+        Me.Label12.Text = "Fecha de Nacimiento"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(17, 118)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(52, 13)
+        Me.Label13.TabIndex = 3
+        Me.Label13.Text = "Dirección"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(271, 78)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(49, 13)
+        Me.Label14.TabIndex = 4
+        Me.Label14.Text = "Teléfono"
+        '
+        'TBSDirCliente
+        '
+        Me.TBSDirCliente.Location = New System.Drawing.Point(75, 115)
+        Me.TBSDirCliente.Name = "TBSDirCliente"
+        Me.TBSDirCliente.Size = New System.Drawing.Size(307, 20)
+        Me.TBSDirCliente.TabIndex = 6
+        '
+        'TBSApeCliente
+        '
+        Me.TBSApeCliente.Location = New System.Drawing.Point(310, 30)
+        Me.TBSApeCliente.Name = "TBSApeCliente"
+        Me.TBSApeCliente.Size = New System.Drawing.Size(183, 20)
+        Me.TBSApeCliente.TabIndex = 3
+        '
+        'BSVerificarClente
+        '
+        Me.BSVerificarClente.Location = New System.Drawing.Point(445, 16)
+        Me.BSVerificarClente.Name = "BSVerificarClente"
+        Me.BSVerificarClente.Size = New System.Drawing.Size(93, 34)
+        Me.BSVerificarClente.TabIndex = 16
+        Me.BSVerificarClente.Text = "Verificar"
+        Me.BSVerificarClente.UseVisualStyleBackColor = True
+        '
+        'TBSDni
+        '
+        Me.TBSDni.Location = New System.Drawing.Point(199, 24)
+        Me.TBSDni.Name = "TBSDni"
+        Me.TBSDni.Size = New System.Drawing.Size(154, 20)
+        Me.TBSDni.TabIndex = 14
+        '
+        'ShapeContainer2
+        '
+        Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer2.Name = "ShapeContainer2"
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(698, 374)
+        Me.ShapeContainer2.TabIndex = 18
+        Me.ShapeContainer2.TabStop = False
+        '
+        'LineShape2
+        '
+        Me.LineShape2.BorderColor = System.Drawing.Color.White
+        Me.LineShape2.Name = "LineShape1"
+        Me.LineShape2.X1 = 93
+        Me.LineShape2.X2 = 592
+        Me.LineShape2.Y1 = 67
+        Me.LineShape2.Y2 = 67
+        '
+        'PanelBotones1
+        '
+        Me.PanelBotones1.Controls.Add(Me.BSModifCliente)
+        Me.PanelBotones1.Controls.Add(Me.BSBajaCliente)
+        Me.PanelBotones1.Controls.Add(Me.BSAltaCliente)
+        Me.PanelBotones1.Controls.Add(Me.BSVerCliente)
+        Me.PanelBotones1.Location = New System.Drawing.Point(210, 472)
+        Me.PanelBotones1.Name = "PanelBotones1"
+        Me.PanelBotones1.Size = New System.Drawing.Size(602, 60)
+        Me.PanelBotones1.TabIndex = 10
+        '
+        'BSModifCliente
+        '
+        Me.BSModifCliente.Location = New System.Drawing.Point(320, 3)
+        Me.BSModifCliente.Name = "BSModifCliente"
+        Me.BSModifCliente.Size = New System.Drawing.Size(101, 33)
+        Me.BSModifCliente.TabIndex = 5
+        Me.BSModifCliente.Text = "Modificar"
+        Me.BSModifCliente.UseVisualStyleBackColor = True
+        '
+        'BSBajaCliente
+        '
+        Me.BSBajaCliente.Location = New System.Drawing.Point(213, 3)
+        Me.BSBajaCliente.Name = "BSBajaCliente"
+        Me.BSBajaCliente.Size = New System.Drawing.Size(95, 33)
+        Me.BSBajaCliente.TabIndex = 4
+        Me.BSBajaCliente.Text = "Baja"
+        Me.BSBajaCliente.UseVisualStyleBackColor = True
+        '
+        'BSAltaCliente
+        '
+        Me.BSAltaCliente.Location = New System.Drawing.Point(107, 3)
+        Me.BSAltaCliente.Name = "BSAltaCliente"
+        Me.BSAltaCliente.Size = New System.Drawing.Size(95, 33)
+        Me.BSAltaCliente.TabIndex = 3
+        Me.BSAltaCliente.Text = "Alta"
+        Me.BSAltaCliente.UseVisualStyleBackColor = True
+        '
+        'BSVerCliente
+        '
+        Me.BSVerCliente.Location = New System.Drawing.Point(3, 3)
+        Me.BSVerCliente.Name = "BSVerCliente"
+        Me.BSVerCliente.Size = New System.Drawing.Size(95, 33)
+        Me.BSVerCliente.TabIndex = 2
+        Me.BSVerCliente.Text = "Ver Clientes"
+        Me.BSVerCliente.UseVisualStyleBackColor = True
+        '
+        'PanelBotones2
+        '
+        Me.PanelBotones2.Controls.Add(Me.BSModifProd)
+        Me.PanelBotones2.Controls.Add(Me.BSBajaProd)
+        Me.PanelBotones2.Controls.Add(Me.BSAltaProd)
+        Me.PanelBotones2.Controls.Add(Me.BSVerProd)
+        Me.PanelBotones2.Location = New System.Drawing.Point(210, 472)
+        Me.PanelBotones2.Name = "PanelBotones2"
+        Me.PanelBotones2.Size = New System.Drawing.Size(602, 60)
+        Me.PanelBotones2.TabIndex = 11
+        '
+        'BSModifProd
+        '
+        Me.BSModifProd.Location = New System.Drawing.Point(320, 3)
+        Me.BSModifProd.Name = "BSModifProd"
+        Me.BSModifProd.Size = New System.Drawing.Size(95, 33)
+        Me.BSModifProd.TabIndex = 6
+        Me.BSModifProd.Text = "Modificar"
+        Me.BSModifProd.UseVisualStyleBackColor = True
+        '
+        'BSBajaProd
+        '
+        Me.BSBajaProd.Location = New System.Drawing.Point(212, 3)
+        Me.BSBajaProd.Name = "BSBajaProd"
+        Me.BSBajaProd.Size = New System.Drawing.Size(95, 33)
+        Me.BSBajaProd.TabIndex = 5
+        Me.BSBajaProd.Text = "Baja"
+        Me.BSBajaProd.UseVisualStyleBackColor = True
+        '
+        'BSAltaProd
+        '
+        Me.BSAltaProd.Location = New System.Drawing.Point(107, 3)
+        Me.BSAltaProd.Name = "BSAltaProd"
+        Me.BSAltaProd.Size = New System.Drawing.Size(95, 33)
+        Me.BSAltaProd.TabIndex = 4
+        Me.BSAltaProd.Text = "Alta"
+        Me.BSAltaProd.UseVisualStyleBackColor = True
         '
         'BSVerProd
         '
-        Me.BSVerProd.Location = New System.Drawing.Point(13, 135)
+        Me.BSVerProd.Location = New System.Drawing.Point(3, 3)
         Me.BSVerProd.Name = "BSVerProd"
         Me.BSVerProd.Size = New System.Drawing.Size(95, 33)
         Me.BSVerProd.TabIndex = 3
         Me.BSVerProd.Text = "Ver Productos"
         Me.BSVerProd.UseVisualStyleBackColor = True
         '
-        'BSVerCliente
+        'BSVolver
         '
-        Me.BSVerCliente.Location = New System.Drawing.Point(13, 91)
-        Me.BSVerCliente.Name = "BSVerCliente"
-        Me.BSVerCliente.Size = New System.Drawing.Size(95, 33)
-        Me.BSVerCliente.TabIndex = 2
-        Me.BSVerCliente.Text = "Ver Clientes"
-        Me.BSVerCliente.UseVisualStyleBackColor = True
+        Me.BSVolver.Location = New System.Drawing.Point(813, 475)
+        Me.BSVolver.Name = "BSVolver"
+        Me.BSVolver.Size = New System.Drawing.Size(95, 33)
+        Me.BSVolver.TabIndex = 9
+        Me.BSVolver.Text = "Volver"
+        Me.BSVolver.UseVisualStyleBackColor = True
+        '
+        'DGVSupervisor
+        '
+        Me.DGVSupervisor.AllowUserToAddRows = False
+        Me.DGVSupervisor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGVSupervisor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
+        Me.DGVSupervisor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVSupervisor.ColumnHeadersVisible = False
+        Me.DGVSupervisor.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Imagenes})
+        Me.DGVSupervisor.Location = New System.Drawing.Point(210, 95)
+        Me.DGVSupervisor.Name = "DGVSupervisor"
+        Me.DGVSupervisor.RowTemplate.Height = 41
+        Me.DGVSupervisor.Size = New System.Drawing.Size(698, 374)
+        Me.DGVSupervisor.TabIndex = 8
+        '
+        'Imagenes
+        '
+        Me.Imagenes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Imagenes.HeaderText = "Imagenes"
+        Me.Imagenes.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch
+        Me.Imagenes.Name = "Imagenes"
+        Me.Imagenes.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Imagenes.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Imagenes.Width = 88
         '
         'BCerrarSuper
         '
@@ -922,7 +1299,8 @@ Partial Class Form1
         '
         Me.LabelSupervisor.AutoSize = True
         Me.LabelSupervisor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelSupervisor.Location = New System.Drawing.Point(838, 16)
+        Me.LabelSupervisor.ForeColor = System.Drawing.Color.White
+        Me.LabelSupervisor.Location = New System.Drawing.Point(836, 16)
         Me.LabelSupervisor.Name = "LabelSupervisor"
         Me.LabelSupervisor.Size = New System.Drawing.Size(45, 15)
         Me.LabelSupervisor.TabIndex = 0
@@ -930,22 +1308,16 @@ Partial Class Form1
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.VerUsuarios)
-        Me.Panel1.Controls.Add(Me.ver)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Location = New System.Drawing.Point(13, 122)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(114, 582)
+        Me.Panel1.Size = New System.Drawing.Size(77, 80)
         Me.Panel1.TabIndex = 10
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.Black
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel2.Location = New System.Drawing.Point(114, 0)
+        Me.Panel2.Location = New System.Drawing.Point(12, 234)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(12, 582)
+        Me.Panel2.Size = New System.Drawing.Size(115, 100)
         Me.Panel2.TabIndex = 11
         '
         'Form1
@@ -955,8 +1327,8 @@ Partial Class Form1
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(974, 582)
         Me.Controls.Add(Me.PanelAdmin)
-        Me.Controls.Add(Me.PanelVendedor)
         Me.Controls.Add(Me.PanelSupervisor)
+        Me.Controls.Add(Me.PanelVendedor)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
@@ -976,13 +1348,17 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelAdmin.ResumeLayout(False)
         Me.PanelAdmin.PerformLayout()
-        Me.PanelClientes.ResumeLayout(False)
-        Me.PanelClientes.PerformLayout()
-        Me.PanelUsuarios.ResumeLayout(False)
         CType(Me.AdminDGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSupervisor.ResumeLayout(False)
         Me.PanelSupervisor.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.PanelSModifCliente.ResumeLayout(False)
+        Me.PanelSModifCliente.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.PanelBotones1.ResumeLayout(False)
+        Me.PanelBotones2.ResumeLayout(False)
+        CType(Me.DGVSupervisor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1059,9 +1435,42 @@ Partial Class Form1
     Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Resta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TBDniCliente As System.Windows.Forms.TextBox
-    Friend WithEvents LabelDniCliente As System.Windows.Forms.Label
+    Friend WithEvents DGVSupervisor As System.Windows.Forms.DataGridView
+    Friend WithEvents BSGestionProd As System.Windows.Forms.Button
+    Friend WithEvents BSVolver As System.Windows.Forms.Button
+    Friend WithEvents Imagenes As System.Windows.Forms.DataGridViewImageColumn
+    Friend WithEvents PanelBotones1 As System.Windows.Forms.Panel
+    Friend WithEvents BSModifCliente As System.Windows.Forms.Button
+    Friend WithEvents BSBajaCliente As System.Windows.Forms.Button
+    Friend WithEvents BSAltaCliente As System.Windows.Forms.Button
+    Friend WithEvents PanelBotones2 As System.Windows.Forms.Panel
+    Friend WithEvents BSModifProd As System.Windows.Forms.Button
+    Friend WithEvents BSBajaProd As System.Windows.Forms.Button
+    Friend WithEvents BSAltaProd As System.Windows.Forms.Button
+    Friend WithEvents PanelSModifCliente As System.Windows.Forms.Panel
+    Friend WithEvents BSCancelarAltaCli As System.Windows.Forms.Button
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents DTPSNacCliente As System.Windows.Forms.DateTimePicker
+    Friend WithEvents TBSNomCliente As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents BSModificarC As System.Windows.Forms.Button
+    Friend WithEvents TBSCorreoCliente As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents TBSTelCliente As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents TBSDirCliente As System.Windows.Forms.TextBox
+    Friend WithEvents TBSApeCliente As System.Windows.Forms.TextBox
+    Friend WithEvents BSVerificarClente As System.Windows.Forms.Button
+    Friend WithEvents TBSDni As System.Windows.Forms.TextBox
+    Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
