@@ -133,6 +133,8 @@ Partial Class Form1
         Me.Imagenes = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -709,6 +711,8 @@ Partial Class Form1
         'PanelAdmin
         '
         Me.PanelAdmin.BackColor = System.Drawing.Color.SteelBlue
+        Me.PanelAdmin.Controls.Add(Me.Panel2)
+        Me.PanelAdmin.Controls.Add(Me.Panel1)
         Me.PanelAdmin.Controls.Add(Me.PanelPro)
         Me.PanelAdmin.Controls.Add(Me.PanelClientes)
         Me.PanelAdmin.Controls.Add(Me.PanelUsuarios)
@@ -1257,6 +1261,20 @@ Partial Class Form1
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
         '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(13, 122)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(77, 80)
+        Me.Panel1.TabIndex = 10
+        '
+        'Panel2
+        '
+        Me.Panel2.Location = New System.Drawing.Point(12, 234)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(115, 100)
+        Me.Panel2.TabIndex = 11
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1407,4 +1425,6 @@ Partial Class Form1
     Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents Panel4 As System.Windows.Forms.Panel
     Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class
