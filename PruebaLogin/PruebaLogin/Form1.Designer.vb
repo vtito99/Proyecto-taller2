@@ -80,6 +80,8 @@ Partial Class Form1
         Me.BCerrarVendedor = New System.Windows.Forms.Button()
         Me.LabelVendedor = New System.Windows.Forms.Label()
         Me.PanelAdmin = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PanelPro = New System.Windows.Forms.Panel()
         Me.PanelClientes = New System.Windows.Forms.Panel()
         Me.PanelUsuarios = New System.Windows.Forms.Panel()
@@ -133,8 +135,6 @@ Partial Class Form1
         Me.Imagenes = New System.Windows.Forms.DataGridViewImageColumn()
         Me.BCerrarSuper = New System.Windows.Forms.Button()
         Me.LabelSupervisor = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.PanelVendedor.SuspendLayout()
         Me.PanelProduc.SuspendLayout()
         CType(Me.DGVProdAgre, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,7 +170,7 @@ Partial Class Form1
         Me.PanelVendedor.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelVendedor.Location = New System.Drawing.Point(0, 0)
         Me.PanelVendedor.Name = "PanelVendedor"
-        Me.PanelVendedor.Size = New System.Drawing.Size(974, 582)
+        Me.PanelVendedor.Size = New System.Drawing.Size(1100, 582)
         Me.PanelVendedor.TabIndex = 0
         '
         'PanelProduc
@@ -190,7 +190,7 @@ Partial Class Form1
         Me.PanelProduc.Controls.Add(Me.DGVProd)
         Me.PanelProduc.Location = New System.Drawing.Point(117, 17)
         Me.PanelProduc.Name = "PanelProduc"
-        Me.PanelProduc.Size = New System.Drawing.Size(681, 750)
+        Me.PanelProduc.Size = New System.Drawing.Size(807, 750)
         Me.PanelProduc.TabIndex = 10
         '
         'CBProductos
@@ -224,7 +224,7 @@ Partial Class Form1
         Me.DGVProdAgre.MinimumSize = New System.Drawing.Size(0, 200)
         Me.DGVProdAgre.Name = "DGVProdAgre"
         Me.DGVProdAgre.RowTemplate.Height = 50
-        Me.DGVProdAgre.Size = New System.Drawing.Size(649, 243)
+        Me.DGVProdAgre.Size = New System.Drawing.Size(775, 243)
         Me.DGVProdAgre.TabIndex = 28
         '
         'Quitar
@@ -323,7 +323,7 @@ Partial Class Form1
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Location = New System.Drawing.Point(100, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(426, 89)
+        Me.GroupBox3.Size = New System.Drawing.Size(552, 89)
         Me.GroupBox3.TabIndex = 25
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Verificar Cliente"
@@ -332,7 +332,7 @@ Partial Class Form1
         '
         Me.BPVerificar.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.BPVerificar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BPVerificar.Location = New System.Drawing.Point(278, 26)
+        Me.BPVerificar.Location = New System.Drawing.Point(341, 26)
         Me.BPVerificar.Name = "BPVerificar"
         Me.BPVerificar.Size = New System.Drawing.Size(93, 34)
         Me.BPVerificar.TabIndex = 19
@@ -342,7 +342,7 @@ Partial Class Form1
         'TBPDni
         '
         Me.TBPDni.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.TBPDni.Location = New System.Drawing.Point(90, 33)
+        Me.TBPDni.Location = New System.Drawing.Point(153, 33)
         Me.TBPDni.Name = "TBPDni"
         Me.TBPDni.Size = New System.Drawing.Size(154, 20)
         Me.TBPDni.TabIndex = 17
@@ -351,7 +351,7 @@ Partial Class Form1
         '
         Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(55, 36)
+        Me.Label15.Location = New System.Drawing.Point(118, 36)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(26, 13)
         Me.Label15.TabIndex = 18
@@ -401,7 +401,7 @@ Partial Class Form1
         Me.DGVProd.MinimumSize = New System.Drawing.Size(0, 200)
         Me.DGVProd.Name = "DGVProd"
         Me.DGVProd.RowTemplate.Height = 50
-        Me.DGVProd.Size = New System.Drawing.Size(649, 243)
+        Me.DGVProd.Size = New System.Drawing.Size(775, 243)
         Me.DGVProd.TabIndex = 20
         '
         'Agregar
@@ -717,7 +717,7 @@ Partial Class Form1
         '
         Me.BCerrarVendedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BCerrarVendedor.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarVendedor.Location = New System.Drawing.Point(861, 50)
+        Me.BCerrarVendedor.Location = New System.Drawing.Point(987, 50)
         Me.BCerrarVendedor.Name = "BCerrarVendedor"
         Me.BCerrarVendedor.Size = New System.Drawing.Size(63, 35)
         Me.BCerrarVendedor.TabIndex = 1
@@ -729,7 +729,7 @@ Partial Class Form1
         Me.LabelVendedor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelVendedor.AutoSize = True
         Me.LabelVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelVendedor.Location = New System.Drawing.Point(801, 17)
+        Me.LabelVendedor.Location = New System.Drawing.Point(927, 17)
         Me.LabelVendedor.Name = "LabelVendedor"
         Me.LabelVendedor.Size = New System.Drawing.Size(39, 13)
         Me.LabelVendedor.TabIndex = 0
@@ -752,8 +752,22 @@ Partial Class Form1
         Me.PanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelAdmin.Location = New System.Drawing.Point(0, 0)
         Me.PanelAdmin.Name = "PanelAdmin"
-        Me.PanelAdmin.Size = New System.Drawing.Size(974, 582)
+        Me.PanelAdmin.Size = New System.Drawing.Size(1100, 582)
         Me.PanelAdmin.TabIndex = 0
+        '
+        'Panel2
+        '
+        Me.Panel2.Location = New System.Drawing.Point(12, 234)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(115, 100)
+        Me.Panel2.TabIndex = 11
+        '
+        'Panel1
+        '
+        Me.Panel1.Location = New System.Drawing.Point(13, 122)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(77, 80)
+        Me.Panel1.TabIndex = 10
         '
         'PanelPro
         '
@@ -859,7 +873,7 @@ Partial Class Form1
         'BCerrarAdmin
         '
         Me.BCerrarAdmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BCerrarAdmin.Location = New System.Drawing.Point(804, 35)
+        Me.BCerrarAdmin.Location = New System.Drawing.Point(930, 35)
         Me.BCerrarAdmin.Name = "BCerrarAdmin"
         Me.BCerrarAdmin.Size = New System.Drawing.Size(93, 27)
         Me.BCerrarAdmin.TabIndex = 0
@@ -1305,20 +1319,6 @@ Partial Class Form1
         Me.LabelSupervisor.Size = New System.Drawing.Size(45, 15)
         Me.LabelSupervisor.TabIndex = 0
         Me.LabelSupervisor.Text = "Label2"
-        '
-        'Panel1
-        '
-        Me.Panel1.Location = New System.Drawing.Point(13, 122)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(77, 80)
-        Me.Panel1.TabIndex = 10
-        '
-        'Panel2
-        '
-        Me.Panel2.Location = New System.Drawing.Point(12, 234)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(115, 100)
-        Me.Panel2.TabIndex = 11
         '
         'Form1
         '
